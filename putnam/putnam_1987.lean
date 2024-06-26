@@ -8,7 +8,8 @@ theorem putnam_1987_a1
 (hB : B = {(x, y) : ℝ × ℝ | 2 * x * y + y / (x ^ 2 + y ^ 2) = 3})
 (hC : C = {(x, y) : ℝ × ℝ | x ^ 3 - 3 * x * y ^ 2 + 3 * y = 1})
 (hD : D = {(x, y) : ℝ × ℝ | 3 * x ^ 2 * y - 3 * x - y ^ 3 = 0})
-: A ∩ B = C ∩ D := sorry
+: A ∩ B = C ∩ D := by
+sorry
 
 abbrev putnam_1987_a2_solution : ℕ := sorry
 -- 1984
@@ -19,7 +20,7 @@ theorem putnam_1987_a2
 (hseqind : seqind 1 = 1 ∧ ∀ i ≥ 2, seqind i = seqind (i - 1) + (Nat.digits 10 (i - 1)).length)
 (hseqsize : ∀ i ≥ 1, ∀ j : Fin ((Nat.digits 10 i).length), seqsize (seqind i + j) = (Nat.digits 10 i).length)
 (hf : ∀ n : ℕ, f n = seqsize (10 ^ n))
-: f 1987 = putnam_1987_a2_solution :=
+: f 1987 = putnam_1987_a2_solution := by
 sorry
 
 
@@ -37,7 +38,7 @@ theorem putnam_1987_a4
 (A B C : ℂ)
 (hPABC : eval (vars A B C) P = 0)
 (habs : ‖B - A‖ = 10)
-: (‖C - A‖ = putnam_1987_a4_solution) :=
+: (‖C - A‖ = putnam_1987_a4_solution) := by
 sorry
 
 abbrev putnam_1987_a5_solution : Prop := sorry
@@ -54,7 +55,7 @@ theorem putnam_1987_a5
 (Fprop3 : (Fin 3 → ((Fin 3 → ℝ) → ℝ)) → Prop := (fun F : Fin 3 → ((Fin 3 → ℝ) → ℝ) => ∀ x y : ℝ, vec3 ((F 0) (vec3 x y 0)) ((F 1) (vec3 x y 0)) ((F 2) (vec3 x y 0)) = G (vec2 x y)))
 (hvec2 : ∀ x y : ℝ, (vec2 x y) 0 = x ∧ (vec2 x y) 1 = y)
 (hvec3 : ∀ x y z : ℝ, (vec3 x y z) 0 = x ∧ (vec3 x y z) 1 = y ∧ (vec3 x y z) 2 = z)
-: (∃ F : Fin 3 → ((Fin 3 → ℝ) → ℝ), Fprop1 F ∧ Fprop2 F ∧ Fprop3 F) ↔ putnam_1987_a5_solution :=
+: (∃ F : Fin 3 → ((Fin 3 → ℝ) → ℝ), Fprop1 F ∧ Fprop2 F ∧ Fprop3 F) ↔ putnam_1987_a5_solution := by
 sorry
 
 open Nat Real
@@ -63,13 +64,13 @@ abbrev putnam_1987_a6_solution : Set ℝ := sorry
 -- {x : ℝ | x > 0 ∧ x < 25}
 theorem putnam_1987_a6
 (a : ℕ → ℕ := fun n ↦ {i | (digits 3 n).get i = 0}.ncard)
-: ({x : ℝ | x > 0 ∧ Summable (fun n ↦ x ^ (a n) / (n ^ 3))} = putnam_1987_a6_solution) :=
+: ({x : ℝ | x > 0 ∧ Summable (fun n ↦ x ^ (a n) / (n ^ 3))} = putnam_1987_a6_solution) := by
 sorry
 
 abbrev putnam_1987_b1_solution : ℝ := sorry
 -- 1
 theorem putnam_1987_b1
-: (∫ x in (2)..4, sqrt (log (9 - x)) / (sqrt (log (9 - x)) + sqrt (log (x + 3))) = putnam_1987_b1_solution) :=
+: (∫ x in (2)..4, sqrt (log (9 - x)) / (sqrt (log (9 - x)) + sqrt (log (x + 3))) = putnam_1987_b1_solution) := by
 sorry
 
 open Nat
@@ -77,13 +78,13 @@ open Nat
 theorem putnam_1987_b2
 (r s t : ℕ)
 (hsum : r + s ≤ t)
-: (∑ i : Finset.range (s + 1), (choose s i : ℚ) / (choose t (r + i)) = ((t + 1) : ℚ) / ((t + 1 - s) * choose (t - s) r)) :=
+: (∑ i : Finset.range (s + 1), (choose s i : ℚ) / (choose t (r + i)) = ((t + 1) : ℚ) / ((t + 1 - s) * choose (t - s) r)) := by
 sorry
 
 theorem putnam_1987_b3
 (F : Type*) [Field F]
 (hF : (1 : F) + 1 ≠ 0)
-: {(x, y) : F × F | x ^ 2 + y ^ 2 = 1} = {(1, 0)} ∪ {((r ^ 2 - 1) / (r ^ 2 + 1), (2 * r) / (r ^ 2 + 1)) | r ∈ {r' : F | r' ^ 2 ≠ -1}} :=
+: {(x, y) : F × F | x ^ 2 + y ^ 2 = 1} = {(1, 0)} ∪ {((r ^ 2 - 1) / (r ^ 2 + 1), (2 * r) / (r ^ 2 + 1)) | r ∈ {r' : F | r' ^ 2 ≠ -1}} := by
 sorry
 
 open Filter Topology
@@ -96,7 +97,7 @@ theorem putnam_1987_b4
 (hx : ∀ n ≥ 1, x (n + 1) = (x n) * cos (y n) - (y n) * sin (y n))
 (hy : ∀ n ≥ 1, y (n + 1) = (x n) * sin (y n) + (y n) * cos (y n))
 : let (existsx, limx, existsy, limy) := putnam_1987_b4_solution
-(((∃ c : ℝ, Tendsto x ⊤ (𝓝 c)) → existsx) ∧ (existsx → Tendsto x ⊤ (𝓝 limx)) ∧ ((∃ c : ℝ, Tendsto y ⊤ (𝓝 c)) → existsy) ∧ (existsy → Tendsto y ⊤ (𝓝 limy))) :=
+(((∃ c : ℝ, Tendsto x ⊤ (𝓝 c)) → existsx) ∧ (existsx → Tendsto x ⊤ (𝓝 limx)) ∧ ((∃ c : ℝ, Tendsto y ⊤ (𝓝 c)) → existsy) ∧ (existsy → Tendsto y ⊤ (𝓝 limy))) := by
 sorry
 
 theorem putnam_1987_b5
@@ -105,7 +106,7 @@ theorem putnam_1987_b5
 (O : Matrix (Fin 1) (Fin n) ℂ := 0)
 (M : Matrix (Fin (2 * n)) (Fin n) ℂ)
 (hM : ∀ z : Matrix (Fin 1) (Fin (2 * n)) ℂ, z * M = O → (¬∀ i : Fin (2 * n), z 0 i = 0) → ∃ i : Fin (2 * n), (z 0 i).im ≠ 0)
-: (∀ r : Matrix (Fin (2 * n)) (Fin 1) ℝ, ∃ w : Matrix (Fin n) (Fin 1) ℂ, ∀ i : (Fin (2 * n)), ((M * w) i 0).re = r i 0) :=
+: (∀ r : Matrix (Fin (2 * n)) (Fin 1) ℝ, ∃ w : Matrix (Fin n) (Fin 1) ℂ, ∀ i : (Fin (2 * n)), ((M * w) i 0).re = r i 0) := by
 sorry
 
 theorem putnam_1987_b6
@@ -118,5 +119,5 @@ theorem putnam_1987_b6
 (Scard : S.ncard = ((p : ℤ) ^ 2 - 1) / 2)
 (hS : ∀ a : F, a ≠ 0 → Xor' (a ∈ S) (-a ∈ S))
 (N : ℕ := (S ∩ {x | ∃ a ∈ S, x = 2 * a}).ncard)
-: (Even N) :=
+: (Even N) := by
 sorry

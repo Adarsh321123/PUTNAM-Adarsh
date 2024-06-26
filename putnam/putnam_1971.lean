@@ -9,13 +9,13 @@ theorem putnam_1971_a1
 (hS : S.ncard = 9)
 (L : (ℤ × ℤ × ℤ) × (ℤ × ℤ × ℤ) → Set (ℝ × ℝ × ℝ) := fun ((a, b, c), (d, e, f)) =>
 {(t*a + (1-t)*d, t*b + (1-t)*e, t*c + (1-t)*f) | t ∈ Ioo (0 : ℝ) 1})
-: ∃ x y z : ℤ, ∃ P Q : ℤ × ℤ × ℤ, P ∈ S ∧ Q ∈ S ∧ P ≠ Q ∧ ((x : ℝ), (y : ℝ), (z : ℝ)) ∈ L (P, Q) :=
+: ∃ x y z : ℤ, ∃ P Q : ℤ × ℤ × ℤ, P ∈ S ∧ Q ∈ S ∧ P ≠ Q ∧ ((x : ℝ), (y : ℝ), (z : ℝ)) ∈ L (P, Q) := by
 sorry
 
 abbrev putnam_1971_a2_solution : Set (Polynomial ℝ) := sorry
 -- {Polynomial.X}
 theorem putnam_1971_a2
-: ∀ P : Polynomial ℝ, (P.eval 0 = 0 ∧ (∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1)) ↔ P ∈ putnam_1971_a2_solution :=
+: ∀ P : Polynomial ℝ, (P.eval 0 = 0 ∧ (∀ x : ℝ, P.eval (x^2 + 1) = (P.eval x)^2 + 1)) ↔ P ∈ putnam_1971_a2_solution := by
 sorry
 
 theorem putnam_1971_a3
@@ -26,7 +26,7 @@ theorem putnam_1971_a3
 (hR : R > 0)
 (oncircle : (ℝ × ℝ) → ℝ → (ℝ × ℝ) → Prop := fun C r p => Euclidean.dist p C = r)
 (hcircle : ∃ C : ℝ × ℝ, oncircle C R a ∧ oncircle C R b ∧ oncircle C R c)
-: (Euclidean.dist a b) * (Euclidean.dist a c) * (Euclidean.dist b c) ≥ 2 * R :=
+: (Euclidean.dist a b) * (Euclidean.dist a c) * (Euclidean.dist b c) ≥ 2 * R := by
 sorry
 
 open MvPolynomial
@@ -34,20 +34,20 @@ theorem putnam_1971_a4
 (ε : ℝ)
 (hε : 0 < ε ∧ ε < 1)
 (P : ℕ → ℝ → MvPolynomial (Fin 2) ℝ := fun n δ => (MvPolynomial.X 0 + MvPolynomial.X 1)^n * ((MvPolynomial.X 0)^2 - (MvPolynomial.C (2 - δ))*(MvPolynomial.X 0)*(MvPolynomial.X 1) + (MvPolynomial.X 1)^2))
-: ∃ N : ℕ, ∀ n ≥ N, ∀ i : Fin 2 →₀ ℕ, MvPolynomial.coeff i (P n ε) ≥ 0 :=
+: ∃ N : ℕ, ∀ n ≥ N, ∀ i : Fin 2 →₀ ℕ, MvPolynomial.coeff i (P n ε) ≥ 0 := by
 sorry
 
 theorem putnam_1971_a6
 (c : ℝ)
 (hc : ∀ n : ℤ, n > 0 → ∃ m : ℤ, (n : ℝ)^c = m)
-: ∃ m : ℤ, m ≥ 0 ∧ c = m :=
+: ∃ m : ℤ, m ≥ 0 ∧ c = m := by
 sorry
 
 theorem putnam_1971_b1
 (S : Type*) [Mul S]
 (hself : ∀ x : S, x * x = x)
 (h2 : ∀ x y z : S, (x * y) * z = (y * z) * x)
-: (∀ x y z : S, (x * y) * z = x * (y * z)) ∧ (∀ x y : S, x * y = y * x) :=
+: (∀ x y z : S, (x * y) * z = x * (y * z)) ∧ (∀ x y : S, x * y = y * x) := by
 sorry
 
 abbrev putnam_1971_b2_solution : Set (ℝ → ℝ) := sorry
@@ -55,10 +55,10 @@ abbrev putnam_1971_b2_solution : Set (ℝ → ℝ) := sorry
 theorem putnam_1971_b2
 (S : Set ℝ := univ \ {0, 1})
 (P : (ℝ → ℝ) → Prop := fun (F : ℝ → ℝ) => ∀ x ∈ S, F x + F ((x - 1)/x) = 1 + x)
-: (∀ F ∈ putnam_1971_b2_solution, P F) ∧ ∀ f : ℝ → ℝ, P f → ∃ F ∈ putnam_1971_b2_solution, (∀ x ∈ S, f x = F x) :=
+: (∀ F ∈ putnam_1971_b2_solution, P F) ∧ ∀ f : ℝ → ℝ, P f → ∃ F ∈ putnam_1971_b2_solution, (∀ x ∈ S, f x = F x) := by
 sorry
 
 theorem putnam_1971_b6
 (δ : ℤ → ℤ := fun n => sSup {t | Odd t ∧ t ∣ n})
-: ∀ x : ℤ, x > 0 → |∑ i in Finset.Icc 1 x, (δ i)/(i : ℚ) - 2*x/3| < 1 :=
+: ∀ x : ℤ, x > 0 → |∑ i in Finset.Icc 1 x, (δ i)/(i : ℚ) - 2*x/3| < 1 := by
 sorry

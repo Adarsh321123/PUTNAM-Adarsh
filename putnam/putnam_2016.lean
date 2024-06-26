@@ -6,7 +6,7 @@ open Polynomial Filter Topology Real Set Polynomial
 abbrev putnam_2016_a1_solution : ℕ := sorry
 -- 8
 theorem putnam_2016_a1
-: (∀ j : ℕ+, (∀ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[j] P).eval k) → j ≥ putnam_2016_a1_solution) ∧ (∀ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[putnam_2016_a1_solution] P).eval k) :=
+: (∀ j : ℕ+, (∀ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[j] P).eval k) → j ≥ putnam_2016_a1_solution) ∧ (∀ P : ℤ[X], ∀ k : ℤ, 2016 ∣ (derivative^[putnam_2016_a1_solution] P).eval k) := by
 sorry
 
 noncomputable abbrev putnam_2016_a2_solution : ℝ := sorry
@@ -16,7 +16,7 @@ theorem putnam_2016_a2
 (M : ℕ → ℕ)
 (hpM : ∀ n : ℕ, p n (M n))
 (hMub : ∀ n : ℕ, ∀ m : ℕ, p n m → m ≤ M n)
-: (Tendsto (fun n ↦ ((M n : ℝ) / (n : ℝ))) ⊤ (𝓝 putnam_2016_a2_solution)) :=
+: (Tendsto (fun n ↦ ((M n : ℝ) / (n : ℝ))) ⊤ (𝓝 putnam_2016_a2_solution)) := by
 sorry
 
 open Real
@@ -25,7 +25,7 @@ noncomputable abbrev putnam_2016_a3_solution : ℝ := sorry
 theorem putnam_2016_a3
 (f : ℝ → ℝ)
 (hf : ∀ x : ℝ, x ≠ 0 → f x + f (1 - 1 / x) = arctan x)
-: (∫ x in (0)..1, f x = putnam_2016_a3_solution) :=
+: (∫ x in (0)..1, f x = putnam_2016_a3_solution) := by
 sorry
 
 open List
@@ -37,7 +37,7 @@ theorem putnam_2016_a5
 (ghgen : Group.closure {g, h} = G ∧ ¬Group.closure {g} = G ∧ ¬Group.closure {h} = G)
 (godd : Odd (orderOf g))
 (S : Set G := {g * h, g⁻¹ * h, g * h⁻¹, g⁻¹ * h⁻¹})
-: (∀ x : G, ∃ mn : List G, 1 ≤ mn.length ∧ mn.length ≤ Gfin.card ∧ ∀ i : Fin mn.length, mn.get i ∈ S ∧ x = List.prod mn) :=
+: (∀ x : G, ∃ mn : List G, 1 ≤ mn.length ∧ mn.length ≤ Gfin.card ∧ ∀ i : Fin mn.length, mn.get i ∈ S ∧ x = List.prod mn) := by
 sorry
 
 noncomputable abbrev putnam_2016_a6_solution : ℝ := sorry
@@ -50,7 +50,7 @@ theorem putnam_2016_a6
 (p : ℝ → Prop := fun c ↦ ∀ P : Polynomial ℝ, P.degree = 3 → (∃ x ∈ Icc 0 1, P.eval x = 0) → ∫ x in (0)..1, |P.eval x| ≤ c * max P)
 (hpC : p C)
 (hClb : ∀ c : ℝ, p c → C ≤ c)
-: (C = putnam_2016_a6_solution) :=
+: (C = putnam_2016_a6_solution) := by
 sorry
 
 noncomputable abbrev putnam_2016_b1_solution : ℝ := sorry
@@ -59,7 +59,7 @@ theorem putnam_2016_b1
 (x : ℕ → ℝ)
 (hx0 : x 0 = 1)
 (hxn : ∀ n : ℕ, x (n + 1) = log (exp (x n) - (x n)))
-: (∑' n : ℕ, x n = putnam_2016_b1_solution) :=
+: (∑' n : ℕ, x n = putnam_2016_b1_solution) := by
 sorry
 
 open Filter Topology
@@ -70,13 +70,13 @@ theorem putnam_2016_b2
 (squarish : ℤ → Prop := fun n ↦ IsSquare n ∨ ∃ w : ℤ, IsSquare |n - w ^ 2| ∧ ∀ v : ℕ, |n - w ^ 2| ≤ |n - v ^ 2|)
 (S : ℤ → ℕ := fun n ↦ {i ∈ Finset.Icc 1 n | squarish i}.ncard)
 (p : ℝ → ℝ → Prop := fun α ↦ fun β ↦ α > 0 ∧ β > 0 ∧ Tendsto (fun N ↦ S N / (N : ℝ) ^ α) ⊤ (𝓝 β))
-: ((∀ α β : ℝ, ((α, β) = putnam_2016_b2_solution ↔ p α β)) ∨ ¬∃ α β : ℝ, p α β) :=
+: ((∀ α β : ℝ, ((α, β) = putnam_2016_b2_solution ↔ p α β)) ∨ ¬∃ α β : ℝ, p α β) := by
 sorry
 
 theorem putnam_2016_b3
 (S : Finset (Fin 2 → ℝ))
 (hS : ∀ A ∈ S, ∀ B ∈ S, ∀ C ∈ S, MeasureTheory.volume (convexHull ℝ {A, B, C}) ≤ 1)
-: ∃ A' B' C' : Fin 2 → ℝ, MeasureTheory.volume (convexHull ℝ {A', B', C'}) = 4 ∧ convexHull ℝ {A', B', C'} ⊇ S :=
+: ∃ A' B' C' : Fin 2 → ℝ, MeasureTheory.volume (convexHull ℝ {A', B', C'}) = 4 ∧ convexHull ℝ {A', B', C'} ⊇ S := by
 sorry
 
 noncomputable abbrev putnam_2016_b4_solution : ℕ → ℝ := sorry
@@ -85,7 +85,7 @@ theorem putnam_2016_b4
 (n : ℕ)
 (mats01 : Set (Matrix (Fin (2 * n)) (Fin (2 * n)) ℝ) := {A : Matrix (Fin (2 * n)) (Fin (2 * n)) ℝ | ∀ i j : Fin (2 * n), A i j = 0 ∨ A i j = 1})
 (npos : n ≥ 1)
-: (∑' A : mats01, (A.1 - (Matrix.transpose A)).det) / mats01.ncard = putnam_2016_b4_solution n :=
+: (∑' A : mats01, (A.1 - (Matrix.transpose A)).det) / mats01.ncard = putnam_2016_b4_solution n := by
 sorry
 
 abbrev putnam_2016_b5_solution : Set (Set.Ioi (1 : ℝ) → Set.Ioi (1 : ℝ)) := sorry
@@ -94,11 +94,12 @@ theorem putnam_2016_b5
 (f : Set.Ioi (1 : ℝ) → Set.Ioi (1 : ℝ))
 (fle : Prop)
 (hfle : fle = ∀ x y : Set.Ioi (1 : ℝ), ((x : ℝ) ^ 2 ≤ y ∧ y ≤ (x : ℝ) ^ 3) → ((f x : ℝ) ^ 2 ≤ f y ∧ f y ≤ (f x : ℝ) ^ 3))
-: fle ↔ f ∈ putnam_2016_b5_solution := sorry
+: fle ↔ f ∈ putnam_2016_b5_solution := by
+sorry
 
 
 abbrev putnam_2016_b6_solution : ℝ := sorry
 -- 1
 theorem putnam_2016_b6
-: ∑' k : ℕ, ((-1 : ℝ) ^ ((k + 1 : ℤ) - 1) / (k + 1 : ℝ)) * ∑' n : ℕ, (1 : ℝ) / ((k + 1) * (2 ^ n) + 1) = putnam_2016_b6_solution :=
+: ∑' k : ℕ, ((-1 : ℝ) ^ ((k + 1 : ℤ) - 1) / (k + 1 : ℝ)) * ∑' n : ℕ, (1 : ℝ) / ((k + 1) * (2 ^ n) + 1) = putnam_2016_b6_solution := by
 sorry

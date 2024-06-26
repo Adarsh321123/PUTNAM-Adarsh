@@ -7,7 +7,7 @@ theorem putnam_1962_a1
 (S : Set (ℝ × ℝ))
 (hS : S.ncard = 5)
 (hnoncol : ∀ s ⊆ S, s.ncard = 3 → ¬Collinear ℝ s)
-: ∃ T ⊆ S, T.ncard = 4 ∧ ¬∃ t ∈ T, t ∈ convexHull ℝ (T \ {t}) :=
+: ∃ T ⊆ S, T.ncard = 4 ∧ ¬∃ t ∈ T, t ∈ convexHull ℝ (T \ {t}) := by
 sorry
 
 
@@ -18,7 +18,7 @@ theorem putnam_1962_a2
 (hfinf : (ℝ → ℝ) → Prop := fun (f : ℝ → ℝ) => ∀ x > 0, (⨍ v in Set.Icc 0 x, f v) = Real.sqrt ((f 0) * (f x)))
 : (∀ f : ℝ → ℝ, (hfinf f → ∃ g ∈ putnam_1962_a2_solution, ∀ x ≥ 0, g x = f x) ∧
 ∀ e > 0, hf e f → ∃ g ∈ putnam_1962_a2_solution, ∀ x ∈ Set.Ico 0 e, g x = f x) ∧
-∀ f ∈ putnam_1962_a2_solution, hfinf f ∨ (∃ e > 0, hf e f) :=
+∀ f ∈ putnam_1962_a2_solution, hfinf f ∨ (∃ e > 0, hf e f) := by
 sorry
 
 theorem putnam_1962_a4
@@ -28,13 +28,13 @@ theorem putnam_1962_a4
 (hfabs : ∀ x ∈ Set.Icc a b, |f x| ≤ 1)
 (hfppabs : ∀ x ∈ Set.Icc a b, |(iteratedDeriv 2 f) x| ≤ 1)
 (hlen2 : b - a ≥ 2)
-: ∀ x ∈ Set.Icc a b, |(iteratedDeriv 1 f) x| ≤ 2 :=
+: ∀ x ∈ Set.Icc a b, |(iteratedDeriv 1 f) x| ≤ 2 := by
 sorry
 
 abbrev putnam_1962_a5_solution : ℕ → ℕ := sorry
 -- fun n : ℕ => n * (n + 1) * 2^(n - 2)
 theorem putnam_1962_a5
-: ∀ n ≥ 2, putnam_1962_a5_solution n = ∑ k in Finset.Icc 1 n, Nat.choose n k * k^2 :=
+: ∀ n ≥ 2, putnam_1962_a5_solution n = ∑ k in Finset.Icc 1 n, Nat.choose n k * k^2 := by
 sorry
 
 theorem putnam_1962_a6
@@ -42,7 +42,7 @@ theorem putnam_1962_a6
 (hSadd : ∀ a ∈ S, ∀ b ∈ S, a + b ∈ S)
 (hSprod : ∀ a ∈ S, ∀ b ∈ S, a * b ∈ S)
 (hScond : ∀ r : ℚ, (r ∈ S ∨ -r ∈ S ∨ r = 0) ∧ ¬(r ∈ S ∧ -r ∈ S) ∧ ¬(r ∈ S ∧ r = 0) ∧ ¬(-r ∈ S ∧ r = 0))
-: S = { r : ℚ | r > 0 } :=
+: S = { r : ℚ | r > 0 } := by
 sorry
 
 theorem putnam_1962_b1
@@ -51,14 +51,14 @@ theorem putnam_1962_b1
 (n : ℕ)
 (h0 : p 0 = fun x : ℝ => 1)
 (hp : ∀ n > 0, p n = fun x : ℝ => ∏ i in Finset.range n, (x - i))
-: p n (x+y) = ∑ k in Finset.range (n+1), Nat.choose n k * (p k x) * (p (n - k) y) :=
+: p n (x+y) = ∑ k in Finset.range (n+1), Nat.choose n k * (p k x) * (p (n - k) y) := by
 sorry
 
 
 theorem putnam_1962_b5
 (n : ℤ)
 (ng1 : n > 1)
-: (3 * (n : ℝ) + 1) / (2 * n + 2) < ∑ i : Finset.Icc 1 n, ((i : ℝ) / n) ^ (n : ℝ) ∧ ∑ i : Finset.Icc 1 n, ((i : ℝ) / n) ^ (n : ℝ) < 2 :=
+: (3 * (n : ℝ) + 1) / (2 * n + 2) < ∑ i : Finset.Icc 1 n, ((i : ℝ) / n) ^ (n : ℝ) ∧ ∑ i : Finset.Icc 1 n, ((i : ℝ) / n) ^ (n : ℝ) < 2 := by
 sorry
 
 theorem putnam_1962_b6
@@ -69,5 +69,5 @@ theorem putnam_1962_b6
 (hf1 : ∀ x ∈ Set.Icc 0 (2 * π), |f x| ≤ 1)
 (hxs : xs.ncard = 2 * n ∧ xs ⊆ Set.Ico 0 (2 * π))
 (hfxs : ∀ x ∈ xs, |f x| = 1)
-: (¬∃ c : ℝ, f = fun x : ℝ => c) → ∃ a : ℝ, f = fun x : ℝ => Real.cos (n * x + a) :=
+: (¬∃ c : ℝ, f = fun x : ℝ => c) → ∃ a : ℝ, f = fun x : ℝ => Real.cos (n * x + a) := by
 sorry

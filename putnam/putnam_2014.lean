@@ -9,7 +9,7 @@ theorem putnam_2014_a1
 (hfdiff : ContDiff ℝ ⊤ f)
 (c : ℕ → ℝ)
 (hc : ∀ k : ℕ, c k = taylorCoeffWithin f k Set.univ 0)
-: ∀ k : ℕ, c k ≠ 0 → ∃ q : ℚ, c k = q ∧ (q.num = 1 ∨ Prime q.num.natAbs) :=
+: ∀ k : ℕ, c k ≠ 0 → ∃ q : ℚ, c k = q ∧ (q.num = 1 ∨ Prime q.num.natAbs) := by
 sorry
 
 open Nat
@@ -21,7 +21,7 @@ theorem putnam_2014_a2
 (A : Matrix (Fin n) (Fin n) ℝ)
 (npos : n > 0)
 (hA : ∀ i j : Fin n, A i j = 1 / min (i.1 + 1 : ℚ) (j.1 + 1))
-: A.det = putnam_2014_a2_solution n :=
+: A.det = putnam_2014_a2_solution n := by
 sorry
 
 noncomputable abbrev putnam_2014_a3_solution : ℝ := sorry
@@ -30,7 +30,7 @@ theorem putnam_2014_a3
 (a : ℕ → ℝ)
 (a0 : a 0 = 5 / 2)
 (ak : ∀ k ≥ 1, a k = (a (k - 1)) ^ 2 - 2)
-: Tendsto (fun n : ℕ => ∏ k in Finset.range n, (1 - 1 / a k)) atTop (𝓝 putnam_2014_a3_solution) :=
+: Tendsto (fun n : ℕ => ∏ k in Finset.range n, (1 - 1 / a k)) atTop (𝓝 putnam_2014_a3_solution) := by
 sorry
 
 noncomputable abbrev putnam_2014_a4_solution : ℝ := sorry
@@ -38,13 +38,13 @@ noncomputable abbrev putnam_2014_a4_solution : ℝ := sorry
 theorem putnam_2014_a4
 (Xrandvar : (ℕ → ℝ) → Prop := (fun X : ℕ → ℝ => (∀ n : ℕ, X n ∈ Set.Icc 0 1) ∧ ∑' n : ℕ, X n = 1))
 (E : (ℕ → ℝ) → (ℕ → ℝ) → ℝ := (fun (X : ℕ → ℝ) (f : ℕ → ℝ) => ∑' n : ℕ, f n * X n))
-: sInf {X0 : ℝ | ∃ X : ℕ → ℝ, Xrandvar X ∧ E X (fun x : ℕ => x) = 1 ∧ E X (fun x : ℕ => x ^ 2) = 2 ∧ E X (fun x : ℕ => x ^ 3) = 5 ∧ X0 = X 0} = putnam_2014_a4_solution :=
+: sInf {X0 : ℝ | ∃ X : ℕ → ℝ, Xrandvar X ∧ E X (fun x : ℕ => x) = 1 ∧ E X (fun x : ℕ => x ^ 2) = 2 ∧ E X (fun x : ℕ => x ^ 3) = 5 ∧ X0 = X 0} = putnam_2014_a4_solution := by
 sorry
 
 theorem putnam_2014_a5
 (P : ℕ → Polynomial ℂ)
 (hP : ∀ n, P n = ∑ i in Finset.Icc 1 n, i * Polynomial.X ^ (i - 1))
-: ∀ (j k : ℕ), (j > 0 ∧ k > 0) → j ≠ k → IsCoprime (P j) (P k) :=
+: ∀ (j k : ℕ), (j > 0 ∧ k > 0) → j ≠ k → IsCoprime (P j) (P k) := by
 sorry
 
 abbrev putnam_2014_a6_solution : ℕ → ℕ := sorry
@@ -54,7 +54,7 @@ theorem putnam_2014_a6
 (kex : ℕ → Prop)
 (npos : n > 0)
 (hkex : ∀ k ≥ 1, kex k = ∃ M N : Fin k → Matrix (Fin n) (Fin n) ℝ, ∀ i j : Fin k, ((∃ p : Fin n, (M i * N j) p p = 0) ↔ i ≠ j))
-: (putnam_2014_a6_solution n ≥ 1 ∧ kex (putnam_2014_a6_solution n)) ∧ (∀ k ≥ 1, kex k → k ≤ putnam_2014_a6_solution n) :=
+: (putnam_2014_a6_solution n ≥ 1 ∧ kex (putnam_2014_a6_solution n)) ∧ (∀ k ≥ 1, kex k → k ≤ putnam_2014_a6_solution n) := by
 sorry
 
 open Nat
@@ -65,7 +65,7 @@ theorem putnam_2014_b1
 (overexpansion : ℕ → List ℕ → Prop := fun N d ↦ N = ∑ i : Fin d.length, (d.get i) * 10 ^ i.1 ∧ d.getLastI ≠ 0 ∧ ∀ a ∈ d, a ∈ Finset.range 11)
 (S : Set ℕ)
 (hS : ∀ N : ℕ, N ∈ S ↔ N > 0 ∧ ∃! d : List ℕ, overexpansion N d)
-: (S = putnam_2014_b1_solution) :=
+: (S = putnam_2014_b1_solution) := by
 sorry
 
 -- uses (ℝ → ℝ) instead of (Set.Icc (1 : ℝ) 3 → ℝ)
@@ -75,7 +75,7 @@ theorem putnam_2014_b2
 (fbound : (ℝ → ℝ) → Prop := (fun f : ℝ → ℝ => ∀ x : Set.Icc (1 : ℝ) 3, -1 ≤ f x ∧ f x ≤ 1))
 (finteq0 : (ℝ → ℝ) → Prop := (fun f : ℝ → ℝ => (∫ x in Set.Ioo 1 3, f x) = 0))
 (fint : (ℝ → ℝ) → ℝ := (fun f : ℝ → ℝ => ∫ x in Set.Ioo 1 3, (f x) / x))
-: (∃ f : ℝ → ℝ, fbound f ∧ finteq0 f ∧ fint f = putnam_2014_b2_solution) ∧ (∀ f : ℝ → ℝ, (fbound f ∧ finteq0 f) → fint f ≤ putnam_2014_b2_solution) :=
+: (∃ f : ℝ → ℝ, fbound f ∧ finteq0 f ∧ fint f = putnam_2014_b2_solution) ∧ (∀ f : ℝ → ℝ, (fbound f ∧ finteq0 f) → fint f ≤ putnam_2014_b2_solution) := by
 sorry
 
 theorem putnam_2014_b3
@@ -83,7 +83,7 @@ theorem putnam_2014_b3
 (A : Matrix (Fin m) (Fin n) ℚ)
 (mnpos : m > 0 ∧ n > 0)
 (Aprime : {p : ℕ | p.Prime ∧ ∃ (i : Fin m) (j : Fin n), |A i j| = p}.encard ≥ m + n)
-: A.rank ≥ 2 :=
+: A.rank ≥ 2 := by
 sorry
 
 theorem putnam_2014_b4
@@ -91,7 +91,7 @@ theorem putnam_2014_b4
 (P: Polynomial ℂ)
 (npos : n > 0)
 (Px : P.degree = n ∧ ∀ k ∈ Set.Icc 0 n, P.coeff k = 2 ^ (k * (n - k)))
-: ∀ r ∈ P.roots, r.im = 0 :=
+: ∀ r ∈ P.roots, r.im = 0 := by
 sorry
 
 open Set Interval
@@ -99,5 +99,5 @@ theorem putnam_2014_b6
 (f : ℝ → ℝ)
 (hlip : ∃ K > 0, ∀ x ∈ Icc 0 1, ∀ y ∈ Icc 0 1, |f x - f y| ≤ K * |x - y|)
 (hrat : ∀ r ∈ Icc (0 : ℚ) 1, ∃ a b : ℤ, f r = a + b * r)
-: (∃ I : Finset (Interval ℝ), (∀ Ii ∈ I, ∃ m c : ℝ, ∀ x ∈ coeHom Ii, f x = c + m * x) ∧ Icc 0 1 = ⋃ Ii ∈ I, coeHom Ii) :=
+: (∃ I : Finset (Interval ℝ), (∀ Ii ∈ I, ∃ m c : ℝ, ∀ x ∈ coeHom Ii, f x = c + m * x) ∧ Icc 0 1 = ⋃ Ii ∈ I, coeHom Ii) := by
 sorry

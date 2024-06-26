@@ -7,7 +7,7 @@ abbrev putnam_2007_a1_solution : Set ℝ := sorry
 -- {2/3, 3/2, (13 + Real.sqrt 601)/12, (13 - Real.sqrt 601)/12}
 def reflect_tangent (f g : ℝ → ℝ) := ContDiff ℝ 1 f ∧ ContDiff ℝ 1 g ∧ (∃ x y : ℝ, f x = y ∧ g y = x ∧ (deriv f) x = 1 / (deriv g) y)
 theorem putnam_2007_a1
-: ∀ a : ℝ, reflect_tangent (fun x => a * x^2 + a * x + 1/24) (fun y => a * y^2 + a * y + 1/24) ↔ a ∈ putnam_2007_a1_solution :=
+: ∀ a : ℝ, reflect_tangent (fun x => a * x^2 + a * x + 1/24) (fun y => a * y^2 + a * y + 1/24) ↔ a ∈ putnam_2007_a1_solution := by
 sorry
 
 noncomputable abbrev putnam_2007_a2_solution : ENNReal := sorry
@@ -19,7 +19,7 @@ theorem putnam_2007_a2
 (hSinterpos : ∀ S : Set (Fin 2 → ℝ), Sinterpos S = ((∃ p ∈ S, p 0 > 0 ∧ p 1 > 0 ∧ p 0 * p 1 = 1) ∧ (∃ p ∈ S, p 0 < 0 ∧ p 1 < 0 ∧ p 0 * p 1 = 1)))
 (hSinterneg : ∀ S : Set (Fin 2 → ℝ), Sinterneg S = ((∃ p ∈ S, p 0 < 0 ∧ p 1 > 0 ∧ p 0 * p 1 = -1) ∧ (∃ p ∈ S, p 0 > 0 ∧ p 1 < 0 ∧ p 0 * p 1 = -1)))
 (hSconv : ∀ S : Set (Fin 2 → ℝ), Sconv S = (Convex ℝ S ∧ Sinterpos S ∧ Sinterneg S))
-: (∃ S : Set (Fin 2 → ℝ), Sconv S ∧ MeasureTheory.volume S = putnam_2007_a2_solution) ∧ (∀ S : Set (Fin 2 → ℝ), Sconv S → MeasureTheory.volume S ≥ putnam_2007_a2_solution) :=
+: (∃ S : Set (Fin 2 → ℝ), Sconv S ∧ MeasureTheory.volume S = putnam_2007_a2_solution) ∧ (∀ S : Set (Fin 2 → ℝ), Sconv S → MeasureTheory.volume S ≥ putnam_2007_a2_solution) := by
 sorry
 
 open Nat
@@ -29,7 +29,7 @@ theorem putnam_2007_a4
 (S : Set (Polynomial ℝ))
 (repunit : ℝ → Prop := fun x ↦ x > 0 ∧ x = floor x ∧ ∀ d ∈ (digits 10 (floor x)), d = 1)
 (hS : ∀ f : Polynomial ℝ, f ∈ S ↔ (∀ n : ℝ, repunit n → repunit (f.eval n)))
-: (S = putnam_2007_a4_solution) :=
+: (S = putnam_2007_a4_solution) := by
 sorry
 
 theorem putnam_2007_a5
@@ -38,7 +38,7 @@ theorem putnam_2007_a5
 (n : ℕ)
 (hp : Nat.Prime p)
 (hn : n = {g : G | orderOf g = p}.encard)
-: n = 0 ∨ p ∣ (n + 1) :=
+: n = 0 ∨ p ∣ (n + 1) := by
 sorry
 
 theorem putnam_2007_b1
@@ -47,7 +47,7 @@ theorem putnam_2007_b1
 (hfnconst : ∃ n : ℕ, n > 0 ∧ f.coeff n > 0)
 (n : ℤ)
 (hn : n > 0)
-: f.eval n ∣ f.eval (f.eval n + 1) ↔ n = 1 :=
+: f.eval n ∣ f.eval (f.eval n + 1) ↔ n = 1 := by
 sorry
 
 open Function Set
@@ -58,7 +58,7 @@ theorem putnam_2007_b2
 (max : ℝ)
 (heqmax : ∃ x ∈ Icc (0 : ℝ) 1, |deriv f x| = max)
 (hmaxub : ∀ x ∈ Icc (0 : ℝ) 1, |deriv f x| ≤ max)
-: (∀ α ∈ (Ioo (0 : ℝ) 1), |∫ x in (0)..α, f x| ≤ (1 / 8) * max) :=
+: (∀ α ∈ (Ioo (0 : ℝ) 1), |∫ x in (0)..α, f x| ≤ (1 / 8) * max) := by
 sorry
 
 noncomputable abbrev putnam_2007_b3_solution : ℝ := sorry
@@ -67,7 +67,7 @@ theorem putnam_2007_b3
 (x : ℕ → ℝ)
 (hx0 : x 0 = 1)
 (hx : ∀ n : ℕ, x (n + 1) = 3 * (x n) + ⌊(x n) * Real.sqrt 5⌋)
-: (x 2007 = putnam_2007_b3_solution) :=
+: (x 2007 = putnam_2007_b3_solution) := by
 sorry
 
 abbrev putnam_2007_b4_solution : ℕ → ℕ := sorry
@@ -75,11 +75,11 @@ abbrev putnam_2007_b4_solution : ℕ → ℕ := sorry
 theorem putnam_2007_b4
 (n : ℕ)
 (npos : n > 0)
-: ({(P, Q) : (Polynomial ℝ) × (Polynomial ℝ) | P ^ 2 + Q ^ 2 = Polynomial.X ^ (2 * n) + 1 ∧ P.degree > Q.degree}.ncard = putnam_2007_b4_solution n) :=
+: ({(P, Q) : (Polynomial ℝ) × (Polynomial ℝ) | P ^ 2 + Q ^ 2 = Polynomial.X ^ (2 * n) + 1 ∧ P.degree > Q.degree}.ncard = putnam_2007_b4_solution n) := by
 sorry
 
 theorem putnam_2007_b5
 (k : ℕ)
 (kpos : k > 0)
-: (∃ P : Finset.range k → Polynomial ℝ, ∀ n : ℤ, ⌊(n : ℝ) / k⌋ ^ k = ∑ i : Finset.range k, (P i).eval (n : ℝ) * ⌊(n : ℝ) / k⌋ ^ (i : ℕ)) :=
+: (∃ P : Finset.range k → Polynomial ℝ, ∀ n : ℤ, ⌊(n : ℝ) / k⌋ ^ k = ∑ i : Finset.range k, (P i).eval (n : ℝ) * ⌊(n : ℝ) / k⌋ ^ (i : ℕ)) := by
 sorry

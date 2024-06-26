@@ -6,7 +6,7 @@ theorem putnam_2006_a3
 (x : ℤ → ℤ)
 (hxlo : ∀ k : ℤ, 0 ≤ k ∧ k ≤ 2006 → x k = k)
 (hxhi : ∀ k : ℤ, k ≥ 2006 → x (k + 1) = x k + x (k - 2005))
-: (∃ i : ℕ, i > 0 ∧ ∀ j : Finset.range 2005, 2006 ∣ x (i + j)) :=
+: (∃ i : ℕ, i > 0 ∧ ∀ j : Finset.range 2005, 2006 ∣ x (i + j)) := by
 sorry
 
 -- Note: uses (ℕ → ℕ) instead of (Equiv.Perm (Fin n))
@@ -19,7 +19,7 @@ theorem putnam_2006_a4
 (ngt1 : n > 1)
 (hpnat : ∀ p : Equiv.Perm (Fin n), ∀ k : Fin n, (pnat p) k = p k)
 (hpcount : ∀ p : Equiv.Perm (Fin n), pcount p = {k : Fin n | (k.1 = 0 ∨ (pnat p) (k - 1) < (pnat p) k) ∧ (k = n - 1 ∨ (pnat p) k > (pnat p) (k + 1))}.encard)
-: (∑ p : Equiv.Perm (Fin n), pcount p) / {p : Equiv.Perm (Fin n) | true}.ncard = putnam_2006_a4_solution n :=
+: (∑ p : Equiv.Perm (Fin n), pcount p) / {p : Equiv.Perm (Fin n) | true}.ncard = putnam_2006_a4_solution n := by
 sorry
 
 
@@ -32,7 +32,7 @@ theorem putnam_2006_a5
 (nodd : Odd n)
 (thetairr : Irrational (theta / Real.pi))
 (ha : ∀ k : Set.Icc 1 n, a k = Real.tan (theta + (k * Real.pi) / n))
-: (∑ k : Set.Icc 1 n, a k) / (∏ k : Set.Icc 1 n, a k) = putnam_2006_a5_solution n :=
+: (∑ k : Set.Icc 1 n, a k) / (∏ k : Set.Icc 1 n, a k) = putnam_2006_a5_solution n := by
 sorry
 
 theorem putnam_2006_b2
@@ -40,7 +40,7 @@ theorem putnam_2006_b2
 (npos : n > 0)
 (X : Finset ℝ)
 (hXcard : X.card = n)
-: (∃ S ⊆ X, S ≠ ∅ ∧ ∃ m : ℤ, |m + ∑ s in S, s| ≤ 1 / (n + 1)) :=
+: (∃ S ⊆ X, S ≠ ∅ ∧ ∃ m : ℤ, |m + ∑ s in S, s| ≤ 1 / (n + 1)) := by
 sorry
 
 abbrev putnam_2006_b3_solution : ℕ → ℕ := sorry
@@ -52,7 +52,7 @@ theorem putnam_2006_b3
 (hSABpart : ∀ (S : Finset (Fin 2 → ℝ)) (AB : Finset (Finset (Fin 2 → ℝ))), SABpart S AB = (AB.card = 2 ∧ ∃ A ∈ AB, ∃ B ∈ AB, (A ∪ B = S) ∧ (A ∩ B = ∅) ∧ (∃ m b : ℝ, (∀ p ∈ A, p 1 > m * p 0 + b) ∧ (∀ p ∈ B, p 1 < m * p 0 + b))))
 (hLS : ∀ S : Finset (Fin 2 → ℝ), LS S = {AB : Finset (Finset (Fin 2 → ℝ)) | SABpart S AB}.encard)
 (npos : n > 0)
-: (∃ S : Finset (Fin 2 → ℝ), S.card = n ∧ LS S = putnam_2006_b3_solution n) ∧ (∀ S : Finset (Fin 2 → ℝ), S.card = n → LS S ≤ putnam_2006_b3_solution n) :=
+: (∃ S : Finset (Fin 2 → ℝ), S.card = n ∧ LS S = putnam_2006_b3_solution n) ∧ (∀ S : Finset (Fin 2 → ℝ), S.card = n → LS S ≤ putnam_2006_b3_solution n) := by
 sorry
 
 noncomputable abbrev putnam_2006_b4_solution : ℕ → ℕ := sorry
@@ -66,7 +66,7 @@ theorem putnam_2006_b4
 (max : ℕ)
 (hmaxeq : ∃ V : Subspace ℝ (Fin n → ℝ), Module.rank V = k ∧ (Z ∩ V).ncard = max)
 (hmaxub : ∀ V : Subspace ℝ (Fin n → ℝ), Module.rank V = k → (Z ∩ V).ncard ≤ max)
-: (max = putnam_2006_b4_solution k) :=
+: (max = putnam_2006_b4_solution k) := by
 sorry
 
 open Set
@@ -78,7 +78,7 @@ theorem putnam_2006_b5
 (max : ℝ)
 (heqmax : ∃ f : ℝ → ℝ, ContinuousOn f (Icc 0 1) ∧ I f - J f = max)
 (hmaxub : ∀ f : ℝ → ℝ, ContinuousOn f (Icc 0 1) → I f - J f ≤ max)
-: (max = putnam_2006_b5_solution) :=
+: (max = putnam_2006_b5_solution) := by
 sorry
 
 open Topology Filter
@@ -91,5 +91,5 @@ theorem putnam_2006_b6
 (a : ℕ → ℝ)
 (ha0 : a 0 > 0)
 (ha : ∀ n : ℕ, a (n + 1) = a n + 1/((a n)^((1 : ℝ)/k)))
-: Tendsto (fun n => (a n)^(k+1)/(n ^ k)) atTop (𝓝 (putnam_2006_b6_solution k)) :=
+: Tendsto (fun n => (a n)^(k+1)/(n ^ k)) atTop (𝓝 (putnam_2006_b6_solution k)) := by
 sorry
