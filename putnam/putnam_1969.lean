@@ -1,6 +1,5 @@
 import Mathlib
 open BigOperators
-
 open Matrix Filter Topology Set Nat
 
 theorem putnam_1969_a2

@@ -1,6 +1,5 @@
 import Mathlib
 open BigOperators
-
 open Filter Topology
 
 abbrev putnam_2021_a1_solution : ℕ := sorry

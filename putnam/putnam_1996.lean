@@ -1,5 +1,7 @@
 import Mathlib
 open BigOperators
+open Function
+open Nat
 
 abbrev putnam_1996_a2_solution : (Fin 2 → ℝ) → (Fin 2 → ℝ) → Set (Fin 2 → ℝ) := sorry
 -- (fun O1 O2 : Fin 2 → ℝ => {p : Fin 2 → ℝ | Euclidean.dist p (midpoint ℝ O1 O2) ≥ 1 ∧ Euclidean.dist p (midpoint ℝ O1 O2) ≤ 2})
@@ -18,7 +20,6 @@ theorem putnam_1996_a3
 : putnam_1996_a3_solution ↔ ∃ S : Set (Finset.range 20), ∃ c1 c2 : Finset.range 6, c1 ≠ c2 ∧ S.ncard = 5 ∧ ({c1, c2} ⊆ ⋂ s ∈ S, student_choices s ∨ ({c1, c2} ⊆ ⋂ s ∈ S, (student_choices s)ᶜ)) := by
 sorry
 
-open Function
 theorem putnam_1996_a4
 (A : Type*)
 [Finite A]
@@ -79,7 +80,6 @@ theorem putnam_1996_b3
 : (∃ x : ℕ → ℤ, xset x ∧ xsum x = putnam_1996_b3_solution n) ∧ (∀ x : ℕ → ℤ, xset x → xsum x ≤ putnam_1996_b3_solution n) := by
 sorry
 
-open Nat
 abbrev putnam_1996_b4_solution : Prop := sorry
 -- False
 theorem putnam_1996_b4

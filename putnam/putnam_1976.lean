@@ -1,9 +1,10 @@
 import Mathlib
 open BigOperators
-
+open MvPolynomial
+open Polynomial
+open Filter Topology
 
 section putnam_1976_a2 -- TODO: This needs to be account for in the script
-open MvPolynomial
 
 theorem putnam_1976_a2
 (P : MvPolynomial (Fin 2) ℤ := (X 0)^2*(X 1) + (X 0)*(X 1)^2)
@@ -21,8 +22,6 @@ abbrev putnam_1976_a3_solution : Set (ℕ × ℕ × ℕ × ℕ) := sorry
 theorem putnam_1976_a3
 : {(p, r, q, s) : ℕ × ℕ × ℕ × ℕ | Nat.Prime p ∧ Nat.Prime q ∧ r > 1 ∧ s > 1 ∧ |(p^r : ℤ) - q^s| = 1} = putnam_1976_a3_solution := by
 sorry
-
-open Polynomial
 
 noncomputable abbrev putnam_1976_a4_solution : (ℝ → ℝ) × (ℝ → ℝ) := sorry
 -- (fun r : ℝ => -1/(r + 1), fun r : ℝ => -(r + 1)/r)
@@ -43,8 +42,6 @@ theorem putnam_1976_a6
 (hf0 : (f 0)^2 + (deriv f 0)^2 = 4)
 : ∃ y : ℝ, (f y) + (iteratedDeriv 2 f y) = 0 := by
 sorry
-
-open Filter Topology
 
 abbrev putnam_1976_b1_solution : ℕ × ℕ := sorry
 -- (4, 1)

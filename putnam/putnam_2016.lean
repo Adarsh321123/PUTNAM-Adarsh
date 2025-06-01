@@ -1,7 +1,10 @@
 import Mathlib
 open BigOperators
-
 open Polynomial Filter Topology Real Set Polynomial
+open Real
+open List
+open Filter Topology
+
 
 abbrev putnam_2016_a1_solution : ℕ := sorry
 -- 8
@@ -19,7 +22,6 @@ theorem putnam_2016_a2
 : (Tendsto (fun n ↦ ((M n : ℝ) / (n : ℝ))) ⊤ (𝓝 putnam_2016_a2_solution)) := by
 sorry
 
-open Real
 noncomputable abbrev putnam_2016_a3_solution : ℝ := sorry
 -- 3 * Real.pi / 8
 theorem putnam_2016_a3
@@ -27,8 +29,6 @@ theorem putnam_2016_a3
 (hf : ∀ x : ℝ, x ≠ 0 → f x + f (1 - 1 / x) = arctan x)
 : (∫ x in (0)..1, f x = putnam_2016_a3_solution) := by
 sorry
-
-open List
 
 theorem putnam_2016_a5
 (G : Type*) [Group G]
@@ -61,8 +61,6 @@ theorem putnam_2016_b1
 (hxn : ∀ n : ℕ, x (n + 1) = log (exp (x n) - (x n)))
 : (∑' n : ℕ, x n = putnam_2016_b1_solution) := by
 sorry
-
-open Filter Topology
 
 noncomputable abbrev putnam_2016_b2_solution : ℝ × ℝ := sorry
 -- (3 / 4, 4 / 3)

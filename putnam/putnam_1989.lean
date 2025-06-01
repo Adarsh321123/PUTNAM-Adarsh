@@ -1,6 +1,8 @@
 import Mathlib
 open BigOperators
-
+open Nat
+open Filter Topology
+open Set
 
 abbrev putnam_1989_a1_solution : ℕ := sorry
 -- 1
@@ -23,8 +25,6 @@ theorem putnam_1989_a3
 (hz : 11 * z ^ 10 + 10 * I * z ^ 9 + 10 * I * z - 11 = 0)
 : (‖z‖ = 1) := by
 sorry
-
-open Nat
 
 theorem putnam_1989_a6
 (F : Type*) [Field F] [Fintype F]
@@ -53,8 +53,6 @@ theorem putnam_1989_b2
 : ((∀ (S : Type) (_ : Nonempty S) (_ : Semigroup S) (_ : IsCancelMul S), (∀ a : S, Finite {x | ∃ n : ℕ, n > 0 ∧ pow S n a = x}) → ∃ (_ : Group S), True) ↔ putnam_1989_b2_solution) := by
 sorry
 
-open Filter Topology
-
 noncomputable abbrev putnam_1989_b3_solution : ℕ → ℝ → ℝ := sorry
 -- fun n c ↦ c * factorial n / (3 ^ n * ∏ m in Finset.Icc (1 : ℤ) n, (1 - 2 ^ (-m)))
 theorem putnam_1989_b3
@@ -65,8 +63,6 @@ theorem putnam_1989_b3
 (μ : ℕ → ℝ := fun n ↦ ∫ x in Set.Ioi 0, x ^ n * (f x))
 : ((∀ n : ℕ, μ n = putnam_1989_b3_solution n (μ 0)) ∧ (∃ L : ℝ, Tendsto (fun n ↦ (μ n) * 3 ^ n / factorial n) ⊤ (𝓝 L)) ∧ (Tendsto (fun n ↦ (μ n) * 3 ^ n / factorial n) ⊤ (𝓝 0) → μ 0 = 0)) := by
 sorry
-
-open Set
 
 abbrev putnam_1989_b4_solution : Prop := sorry
 -- True

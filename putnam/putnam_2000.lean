@@ -1,7 +1,9 @@
 import Mathlib
 open BigOperators
-
 open Topology Filter
+open Nat
+open Filter Topology Set Function
+open Set
 
 abbrev putnam_2000_a1_solution : ℝ → Set ℝ := sorry
 -- (fun A : ℝ => Set.Ioo 0 (A ^ 2))
@@ -46,13 +48,9 @@ theorem putnam_2000_b1
 : (∃ r s t : ℤ, {j : Fin N | Odd (r * a j + s * b j + t * c j)}.ncard ≥ (4 * N : ℝ) / 7) := by
 sorry
 
-open Nat
-
 theorem putnam_2000_b2
 : (∀ m n : ℕ, m ≥ 1 → n ≥ m → n ∣ Nat.gcd m n * Nat.choose n m) := by
 sorry
-
-open Filter Topology Set Function
 
 theorem putnam_2000_b3
 (N : ℕ)
@@ -66,7 +64,6 @@ theorem putnam_2000_b3
 : ((∀ i j : ℕ, i ≤ j → M i ≤ M j) ∧ Tendsto M ⊤ (𝓝 (2 * N))) := by
 sorry
 
-open Set
 theorem putnam_2000_b4
 (f : ℝ → ℝ)
 (hfcont : Continuous f)

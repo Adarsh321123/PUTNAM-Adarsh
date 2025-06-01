@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-
 open Nat
+open Topology Filter
 
 abbrev putnam_2023_a1_solution : ℕ := sorry
 -- 18
@@ -61,7 +61,6 @@ theorem putnam_2023_b2
 : sInf {(digits 2 (2023*n)).sum | n > 0} = putnam_2023_b2_solution := by
 sorry
 
-open Topology Filter
 -- Note: uses (ℕ → ℝ) instead of (Fin (n + 1) → ℝ) and (ℝ → ℝ) instead of (tall ts → ℝ)
 abbrev putnam_2023_b4_solution : ℝ := sorry
 -- 29

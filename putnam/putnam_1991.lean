@@ -1,6 +1,5 @@
 import Mathlib
 open BigOperators
-
 open Filter Topology
 
 abbrev putnam_1991_a2_solution : Prop := sorry

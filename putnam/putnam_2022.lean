@@ -1,7 +1,5 @@
 import Mathlib
 open BigOperators
-
-
 open Polynomial
 
 abbrev putnam_2022_a1_solution : Set (ℝ × ℝ) := sorry

@@ -1,6 +1,6 @@
 import Mathlib
 open BigOperators
-
+open Set Function Metric
 
 theorem putnam_1998_a3
 (f : ℝ → ℝ)
@@ -19,7 +19,6 @@ theorem putnam_1998_a4
 : putnam_1998_a4_solution = {n | 11 ∣ A n} := by
 sorry
 
-open Set Function Metric
 theorem putnam_1998_a5
 (k : ℕ)
 (c : Fin k → (ℝ × ℝ))

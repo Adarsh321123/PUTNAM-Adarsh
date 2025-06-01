@@ -1,7 +1,9 @@
 import Mathlib
 open BigOperators
-
 open Set
+open Nat
+open Polynomial
+open Topology Filter
 
 abbrev putnam_1974_a1_solution : ℕ := sorry
 -- 11
@@ -17,7 +19,6 @@ theorem putnam_1974_a3
 : ∀ p : ℕ, ((p.Prime ∧ p > 2 ∧ (∃ x y : ℤ, p = x^2 + 16*y^2)) ↔ p ∈ putnam_1974_a3_solution.1) ∧ ((p.Prime ∧ p > 2 ∧ (∃ x y : ℤ, p = 4*x^2 + 4*x*y + 5*y^2)) ↔ p ∈ putnam_1974_a3_solution.2) := by
 sorry
 
-open Nat
 noncomputable abbrev putnam_1974_a4_solution : ℕ → ℝ := sorry
 -- (fun n => (n / 2^(n-1)) * (n-1).choose (floor ((n-1)/2)))
 theorem putnam_1974_a4
@@ -26,7 +27,6 @@ theorem putnam_1974_a4
 : (1 : ℝ)/(2^(n-1)) * ∑ k in Finset.Icc 0 ((ceil (n/2)) - 1), (n - 2*k)*(n.choose k) = putnam_1974_a4_solution n := by
 sorry
 
-open Polynomial
 abbrev putnam_1974_a6_solution : ℕ := sorry
 -- 25
 theorem putnam_1974_a6
@@ -41,7 +41,6 @@ theorem putnam_1974_b3
 : Irrational α := by
 sorry
 
-open Topology Filter
 theorem putnam_1974_b4
 (f : ℝ × ℝ → ℝ)
 (hfcontx : ∀ y : ℝ, Continuous (fun x => f ⟨x, y⟩))

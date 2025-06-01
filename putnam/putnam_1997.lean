@@ -1,7 +1,9 @@
 import Mathlib
 open BigOperators
-
 open Filter Topology
+open Bornology Set
+open Polynomial
+
 noncomputable abbrev putnam_1997_a3_solution : ℝ := sorry
 -- Real.sqrt (Real.exp 1)
 theorem putnam_1997_a3
@@ -49,7 +51,6 @@ theorem putnam_1997_b1
 sorry
 
 
-open Bornology Set
 theorem putnam_1997_b2
 (f g : ℝ → ℝ)
 (hg : ∀ x : ℝ, g x ≥ 0)
@@ -67,7 +68,6 @@ theorem putnam_1997_b3
 : n ∈ putnam_1997_b3_solution ↔ ¬5 ∣ (∑ m in Finset.Icc 1 n, 1/m : ℚ).den := by
 sorry
 
-open Polynomial
 theorem putnam_1997_b4
 (a : ℕ → ℕ → ℤ)
 (ha : ∀ n m : ℕ, a n m = coeff ((1 + X + X^2)^m) n)

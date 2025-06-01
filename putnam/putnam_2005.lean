@@ -1,6 +1,5 @@
 import Mathlib
 open BigOperators
-
 open Nat
 
 theorem putnam_2005_a1

@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-
 open Metric Set
+open Filter Topology
 
 theorem putnam_1970_a1
 (a b : ℝ)
@@ -29,8 +29,6 @@ L (putnam_1970_a3_solution.2) = putnam_1970_a3_solution.1 ∧
 ∀ n : ℕ, (Nat.digits 10 (n^2))[0]! ≠ 0 ∧ L (n^2) = putnam_1970_a3_solution.1 → n^2 ≥ putnam_1970_a3_solution.2 := by
 sorry
 
-
-open Filter Topology
 theorem putnam_1970_a4
 (x : ℕ → ℝ)
 (hxlim : Tendsto (fun n => x n - x (n-2)) atTop (𝓝 0))

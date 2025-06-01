@@ -1,15 +1,16 @@
 import Mathlib
 open BigOperators
-
 open Set
+open Filter Topology Real
+open Real
+open Polynomial
+open Function
 
 abbrev putnam_1985_a1_solution : ℕ × ℕ × ℕ × ℕ := sorry
 -- (10, 10, 0, 0)
 theorem putnam_1985_a1
 : (let (a, b, c, d) := putnam_1985_a1_solution; {(A1, A2, A3) : Set ℤ × Set ℤ × Set ℤ | A1 ∪ A2 ∪ A3 = Icc 1 10 ∧ A1 ∩ A2 ∩ A3 = ∅}.ncard = 2 ^ a * 3 ^ b * 5 ^ c * 7 ^ d) := by
 sorry
-
-open Filter Topology Real
 
 noncomputable abbrev putnam_1985_a3_solution : ℝ → ℝ := sorry
 -- fun d ↦ exp d - 1
@@ -30,16 +31,12 @@ theorem putnam_1985_a4
 : ({k : Fin 100 | ∀ N : ℕ, ∃ i ≥ N, a i % 100 = k} = putnam_1985_a4_solution) := by
 sorry
 
-open Real
-
 abbrev putnam_1985_a5_solution : Set ℕ := sorry
 -- {3, 4, 7, 8}
 theorem putnam_1985_a5
 (I : ℕ → ℝ := fun m ↦ ∫ x in (0)..(2 * Real.pi), ∏ k in Finset.Icc 1 m, cos (k * x))
 : ({m ∈ Finset.Icc 1 10 | I m ≠ 0} = putnam_1985_a5_solution) := by
 sorry
-
-open Polynomial
 
 noncomputable abbrev putnam_1985_a6_solution : Polynomial ℝ := sorry
 -- 6 * X ^ 2 + 5 * X + 1
@@ -48,8 +45,6 @@ theorem putnam_1985_a6
 (f : Polynomial ℝ := 3 * X ^ 2 + 7 * X + 2)
 : (let g := putnam_1985_a6_solution; g.eval 0 = 1 ∧ ∀ n : ℕ, n ≥ 1 → Γ (f ^ n) = Γ (g ^ n)) := by
 sorry
-
-open Function
 
 abbrev putnam_1985_b1_solution : Fin 5 → ℤ := sorry
 -- fun i ↦ i - 2

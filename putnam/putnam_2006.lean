@@ -1,5 +1,7 @@
 import Mathlib
 open BigOperators
+open Set
+open Topology Filter
 
 
 theorem putnam_2006_a3
@@ -69,7 +71,6 @@ theorem putnam_2006_b4
 : (max = putnam_2006_b4_solution k) := by
 sorry
 
-open Set
 noncomputable abbrev putnam_2006_b5_solution : ℝ := sorry
 -- 1 / 16
 theorem putnam_2006_b5
@@ -80,8 +81,6 @@ theorem putnam_2006_b5
 (hmaxub : ∀ f : ℝ → ℝ, ContinuousOn f (Icc 0 1) → I f - J f ≤ max)
 : (max = putnam_2006_b5_solution) := by
 sorry
-
-open Topology Filter
 
 noncomputable abbrev putnam_2006_b6_solution : ℕ → ℝ := sorry
 -- fun k => ((k+1)/k)^k

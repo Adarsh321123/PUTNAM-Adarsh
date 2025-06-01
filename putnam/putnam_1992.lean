@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
 open Topology Filter
+open Nat
+open Function
+open Polynomial
 
 theorem putnam_1992_a1
 (f : ℤ → ℤ)
@@ -14,8 +17,6 @@ theorem putnam_1992_a2
 : (∫ y in (0)..1, C (-y - 1) * ∑ k in Finset.Icc (1 : ℕ) 1992, 1 / (y + k) = putnam_1992_a2_solution) := by
 sorry
 
-open Nat
-
 abbrev putnam_1992_a3_solution : ℕ → Set (ℕ × ℕ × ℕ) := sorry
 -- fun m ↦ ite (Odd m) ∅ {(m + 1, 2 ^ (m / 2), 2 ^ (m / 2))}
 theorem putnam_1992_a3
@@ -25,8 +26,6 @@ theorem putnam_1992_a3
 (hS : ∀ n x y : ℕ, (n, x, y) ∈ S ↔ n > 0 ∧ x > 0 ∧ y > 0 ∧ Coprime n m ∧ (x ^ 2 + y ^ 2) ^ m = (x * y) ^ n)
 : (S = putnam_1992_a3_solution m) := by
 sorry
-
-open Function
 
 abbrev putnam_1992_a4_solution : ℕ → ℝ := sorry
 -- fun k ↦ ite (Even k) ((-1) ^ (k / 2) * factorial k) 0
@@ -53,8 +52,6 @@ theorem putnam_1992_b1
 (hminlb : ∀ S : Finset ℝ, S.card = n → min ≤ (A S).ncard)
 : (min = putnam_1992_b1_solution n) := by
 sorry
-
-open Polynomial
 
 theorem putnam_1992_b2
 (Q : ℕ → ℕ → ℕ := fun n k ↦ coeff ((1 + X + X ^ 2 + X ^ 3) ^ n) k)

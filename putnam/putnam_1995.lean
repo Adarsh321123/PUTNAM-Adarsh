@@ -1,6 +1,7 @@
 import Mathlib
 open BigOperators
-
+open Filter Topology Real
+open Nat
 
 theorem putnam_1995_a1
 (S : Set ℝ)
@@ -14,7 +15,6 @@ theorem putnam_1995_a1
 : (∀ a ∈ T, ∀ b ∈ T, a * b ∈ T) ∨ (∀ a ∈ U, ∀ b ∈ U, a * b ∈ U) := by
 sorry
 
-open Filter Topology Real
 abbrev putnam_1995_a2_solution : Set (ℝ × ℝ) := sorry
 -- {x | let ⟨a,b⟩ := x; a = b}
 theorem putnam_1995_a2
@@ -55,7 +55,6 @@ theorem putnam_1995_a6
 : ∃ n ≥ 1995, {M : (SM n) | sumsprog (Srowsums n M)}.encard ≥ 4 * {M : (SM n) | (Srowsums n M).encard = 1}.encard := by
 sorry
 
-open Nat
 theorem putnam_1995_b1
 (part_ct : Finpartition (Finset.range 9) → (Finset.range 9) → ℕ)
 (hp : ∀ partition k, part_ct partition k = (Exists.choose (Finpartition.exists_mem partition k.2)).card)

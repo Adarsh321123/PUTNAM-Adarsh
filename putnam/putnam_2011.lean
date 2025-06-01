@@ -1,5 +1,8 @@
 import Mathlib
 open BigOperators
+open Topology Filter
+open Matrix
+open Set
 
 abbrev putnam_2011_a1_solution : ℕ := sorry
 -- 10053
@@ -13,7 +16,6 @@ theorem putnam_2011_a1
 : {p : Fin 2 → ℤ | ¬∃ spiral : List (Fin 2 → ℤ), isspiral spiral ∧ spiral.getLast! = p}.encard = putnam_2011_a1_solution := by
 sorry
 
-open Topology Filter
 noncomputable abbrev putnam_2011_a2_solution : ℝ := sorry
 -- 2/Real.pi
 theorem putnam_2011_a2
@@ -33,7 +35,6 @@ theorem putnam_2011_a3
 sorry
 
 
-open Matrix
 abbrev putnam_2011_a4_solution : Set ℕ := sorry
 -- {n : ℕ | Odd n}
 theorem putnam_2011_a4
@@ -110,8 +111,6 @@ theorem putnam_2011_b5
 (h : ∃ A : ℝ, ∀ n : ℕ, ∫ x : ℝ, ((∑ i : Finset.range n, 1 / (1 + (x - a i) ^ 2)) ^ 2) ≤ A * n)
 : (∃ B : ℝ, B > 0 ∧ ∀ n : ℕ, ∑' i : Finset.range n, ∑' j : Finset.range n, (1 + (a i - a j) ^ 2) ≥ B * n ^ 3) := by
 sorry
-
-open Set
 
 theorem putnam_2011_b6
 (p : ℕ)

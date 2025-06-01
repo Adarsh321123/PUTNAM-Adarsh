@@ -1,6 +1,7 @@
 import Mathlib
 open BigOperators
-
+open Nat
+open Function Set
 
 -- Note: Modified definition of tangent to handle this problem
 abbrev putnam_2007_a1_solution : Set ℝ := sorry
@@ -22,7 +23,6 @@ theorem putnam_2007_a2
 : (∃ S : Set (Fin 2 → ℝ), Sconv S ∧ MeasureTheory.volume S = putnam_2007_a2_solution) ∧ (∀ S : Set (Fin 2 → ℝ), Sconv S → MeasureTheory.volume S ≥ putnam_2007_a2_solution) := by
 sorry
 
-open Nat
 abbrev putnam_2007_a4_solution : Set (Polynomial ℝ) := sorry
 -- {f : Polynomial ℝ | ∃ d : ℕ, ∃ c ≥ (1 : ℤ) - d, ∀ n : ℝ, f.eval n = (1 / 9) * ((10 ^ c) * (9 * n + 1) ^ d - 1)}
 theorem putnam_2007_a4
@@ -50,7 +50,6 @@ theorem putnam_2007_b1
 : f.eval n ∣ f.eval (f.eval n + 1) ↔ n = 1 := by
 sorry
 
-open Function Set
 theorem putnam_2007_b2
 (f : ℝ → ℝ)
 (hf : ContDiffOn ℝ 1 f (Icc 0 1))

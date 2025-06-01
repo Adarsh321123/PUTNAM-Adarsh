@@ -1,5 +1,6 @@
 import Mathlib
 open BigOperators
+open Function
 
 theorem putnam_2015_a1
 (hyperbola : Set (Fin 2 → ℝ) := {p : Fin 2 → ℝ | p 1 = 1 / p 0 ∧ p 0 > 0})
@@ -101,8 +102,6 @@ theorem putnam_2015_b4
 then 2^(t 0)/(3^(t 1)*5^(t 2)) else 0) = putnam_2015_b4_solution := by
 sorry
 
-
-open Function
 
 abbrev putnam_2015_b5_solution : ℕ := sorry
 -- 4

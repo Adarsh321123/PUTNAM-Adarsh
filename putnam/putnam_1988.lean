@@ -1,5 +1,8 @@
 import Mathlib
 open BigOperators
+open Set
+open Filter Topology
+open Topology Filter
 
 abbrev putnam_1988_a1_solution : ℝ := sorry
 -- 6
@@ -8,16 +11,12 @@ theorem putnam_1988_a1
 : (MeasureTheory.volume R).toReal = putnam_1988_a1_solution := by
 sorry
 
-open Set
-
 abbrev putnam_1988_a2_solution : Prop := sorry
 -- True
 theorem putnam_1988_a2
 (f : ℝ → ℝ := fun x ↦ Real.exp (x ^ 2))
 : ((∃ a b : ℝ, a < b ∧ ∃ g : ℝ → ℝ, (∃ x ∈ Ioo a b, g x ≠ 0) ∧ DifferentiableOn ℝ g (Ioo a b) ∧ ∀ x ∈ Ioo a b, deriv (fun y ↦ f y * g y) x = (deriv f x) * (deriv g x)) ↔ putnam_1988_a2_solution) := by
 sorry
-
-open Filter Topology
 
 abbrev putnam_1988_a3_solution : Set ℝ := sorry
 -- {x | x > 1 / 2}
@@ -61,7 +60,6 @@ theorem putnam_1988_b3
 : putnam_1988_b3_solution > 0 ∧ (∀ n : ℤ, n ≥ 1 → r n ≤ putnam_1988_b3_solution) ∧ (∀ g > 0, (∀ n ≥ 1, r n ≤ g) → g ≥ putnam_1988_b3_solution) := by
 sorry
 
-open Topology Filter
 theorem putnam_1988_b4
 (a : ℕ → ℝ)
 (appos : (ℕ → ℝ) → Prop)

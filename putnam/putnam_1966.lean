@@ -1,14 +1,13 @@
 import Mathlib
 
 open BigOperators
+open Topology
+open Filter
 
 theorem putnam_1966_a1
 (f : ℤ → ℤ := fun n : ℤ => ∑ m in Finset.Icc 0 n, (if Even m then m / 2 else (m - 1)/2))
 : ∀ x y : ℤ, x > 0 ∧ y > 0 ∧ x > y → x * y = f (x + y) - f (x - y) := by
 sorry
-
-open Topology
-open Filter
 
 theorem putnam_1966_a3
 (x : ℕ → ℝ)

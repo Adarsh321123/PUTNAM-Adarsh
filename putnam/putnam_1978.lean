@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
-
+open Set
+open Real
+open Filter Topology Polynomial
+open Polynomial Set
 
 theorem putnam_1978_a1
 (S : Set ℤ := {k | ∃ j : ℤ, 0 ≤ j ∧ j ≤ 33 ∧ k = 3 * j + 1})
@@ -20,8 +23,6 @@ theorem putnam_1978_a2
 : (A.det = ((b * p a - a * p b) / (b - a))) := by
 sorry
 
-open Set
-
 abbrev putnam_1978_a3_solution : ℕ := sorry
 -- 2
 theorem putnam_1978_a3
@@ -36,9 +37,6 @@ theorem putnam_1978_a4
 : ((∀ (S : Type) (_ : Mul S), bypass S → ∀ a b c : S, a * b = c → (c * c = c ∧ ∀ d : S, a * d = c * d))
   ∧ (∃ (S : Type) (_ : Mul S) (_ : Fintype S), bypass S ∧ (∀ a : S, a * a = a) ∧ (∃ a b : S, a * b = a ∧ a ≠ b) ∧ (∃ a b : S, a * b ≠ a))) := by
 sorry
-
-
-open Real
 
 theorem putnam_1978_a5
 (n : ℕ)
@@ -62,8 +60,6 @@ theorem putnam_1978_b2
 : (∑' i : ℕ+, ∑' j : ℕ+, (1 : ℚ) / (i ^ 2 * j + 2 * i * j + i * j ^ 2) = putnam_1978_b2_solution) := by
 sorry
 
-open Filter Topology Polynomial
-
 theorem putnam_1978_b3
 (P : ℕ+ → Polynomial ℝ)
 (hP1 : P 1 = 1 + X)
@@ -79,8 +75,6 @@ sorry
 theorem putnam_1978_b4
 : (∀ N : ℝ, ∃ a b c d : ℤ, a > N ∧ b > N ∧ c > N ∧ d > N ∧ a ^ 2 + b ^ 2 + c ^ 2 + d ^ 2 = a * b * c + a * b * d + a * c * d + b * c * d) := by
 sorry
-
-open Polynomial Set
 
 noncomputable abbrev putnam_1978_b5_solution : Polynomial ℝ := sorry
 -- 4 * X ^ 4 - 4 * X ^ 2 + 1

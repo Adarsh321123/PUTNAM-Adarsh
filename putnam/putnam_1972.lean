@@ -1,7 +1,9 @@
 import Mathlib
 open BigOperators
-
 open Filter Topology Set
+open MeasureTheory
+open Metric
+open Metric
 
 theorem putnam_1972_a1
 (n : ℕ)
@@ -30,7 +32,6 @@ theorem putnam_1972_a5
 : ¬((n : ℤ) ∣ 2^n - 1) := by
 sorry
 
-open MeasureTheory
 theorem putnam_1972_a6
 (f : ℝ → ℝ)
 (n : ℤ)
@@ -40,8 +41,6 @@ theorem putnam_1972_a6
 (hfintlast : ∫ x in Icc 0 1, x^n*(f x) = 1)
 : ∃ S, S ⊆ Icc (0 : ℝ) 1 ∧ MeasurableSet S ∧ volume S > 0 ∧ ∀ x ∈ S, |f x| ≥ 2^n * (n + 1) := by
 sorry
-
-open Metric
 
 theorem putnam_1972_b1
 (S : ℝ → ℝ := fun x : ℝ => ∑' n : ℕ, x^n * (x - 1)^(2*n) / (Nat.factorial n))
@@ -64,7 +63,6 @@ theorem putnam_1972_b4
 : ∃ P : MvPolynomial (Fin 3) ℝ, ∀ x : ℝ, x = MvPolynomial.eval (vars (x^n) (x^(n+1)) (x + x^(n+2))) P := by
 sorry
 
-open Metric
 theorem putnam_1972_b6
 (k : ℕ)
 (hk : k ≥ 1)

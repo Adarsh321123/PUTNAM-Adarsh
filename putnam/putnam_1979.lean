@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
-
+open Set
+open Topology
+open Filter
+open Polynomial
 
 abbrev putnam_1979_a1_solution : Multiset ℕ := sorry
 -- Multiset.replicate 659 3 + {2}
@@ -23,7 +26,6 @@ theorem putnam_1979_a3
 : (∀ m : ℕ, ∃ n : ℕ, n > m ∧ ∃ a : ℤ, a = x n) ↔ putnam_1979_a3_solution (x 1, x 2) := by
 sorry
 
-open Set
 abbrev putnam_1979_a4_solution : Prop := sorry
 -- True
 theorem putnam_1979_a4
@@ -50,16 +52,11 @@ theorem putnam_1979_a6
 sorry
 
 
-open Topology
-open Filter
-
 noncomputable abbrev putnam_1979_b2_solution : ℝ × ℝ → ℝ := sorry
 -- fun (a, b) => (Real.exp (-1))*(b^b/a^a)^(1/(b-a))
 theorem putnam_1979_b2
 : ∀ a b : ℝ, 0 < a ∧ a < b → Tendsto (fun t : ℝ => (∫ x in Icc 0 1, (b*x + a*(1 - x))^t)^(1/t)) (𝓝[≠] 0) (𝓝 (putnam_1979_b2_solution (a, b))) := by
 sorry
-
-open Polynomial
 
 abbrev putnam_1979_b3_solution : ℕ → ℤ := sorry
 -- fun n ↦ (n - 1) / 2

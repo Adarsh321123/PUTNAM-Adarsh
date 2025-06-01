@@ -1,6 +1,6 @@
 import Mathlib
 open BigOperators
-
+open Set
 
 abbrev putnam_1980_a2_solution : ℕ → ℕ → ℕ := sorry
 -- (fun r s : ℕ => (1 + 4 * r + 6 * r ^ 2) * (1 + 4 * s + 6 * s ^ 2))
@@ -67,8 +67,6 @@ theorem putnam_1980_b4
 (hA : ∀ i : Fin 1066, A i ⊆ X ∧ (A i).card > ((1 : ℚ)/2) * X.card)
 : ∃ Y : Finset T, Y ⊆ X ∧ Y.card = 10 ∧ ∀ i : Fin 1066, ∃ y ∈ Y, y ∈ A i := by
 sorry
-
-open Set
 
 abbrev putnam_1980_b5_solution : ℝ → Prop := sorry
 -- fun t : ℝ => 1 ≥ t

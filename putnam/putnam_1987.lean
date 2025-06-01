@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
-
+open MvPolynomial Real
+open Nat Real
+open Nat
+open Filter Topology
 
 theorem putnam_1987_a1
 (A B C D : Set (ℝ × ℝ))
@@ -23,8 +26,6 @@ theorem putnam_1987_a2
 : f 1987 = putnam_1987_a2_solution := by
 sorry
 
-
-open MvPolynomial Real
 
 noncomputable abbrev putnam_1987_a4_solution : ℂ := sorry
 -- (5 / 3) * sqrt 30
@@ -58,7 +59,7 @@ theorem putnam_1987_a5
 : (∃ F : Fin 3 → ((Fin 3 → ℝ) → ℝ), Fprop1 F ∧ Fprop2 F ∧ Fprop3 F) ↔ putnam_1987_a5_solution := by
 sorry
 
-open Nat Real
+
 
 abbrev putnam_1987_a6_solution : Set ℝ := sorry
 -- {x : ℝ | x > 0 ∧ x < 25}
@@ -73,7 +74,7 @@ theorem putnam_1987_b1
 : (∫ x in (2)..4, sqrt (log (9 - x)) / (sqrt (log (9 - x)) + sqrt (log (x + 3))) = putnam_1987_b1_solution) := by
 sorry
 
-open Nat
+
 
 theorem putnam_1987_b2
 (r s t : ℕ)
@@ -87,7 +88,7 @@ theorem putnam_1987_b3
 : {(x, y) : F × F | x ^ 2 + y ^ 2 = 1} = {(1, 0)} ∪ {((r ^ 2 - 1) / (r ^ 2 + 1), (2 * r) / (r ^ 2 + 1)) | r ∈ {r' : F | r' ^ 2 ≠ -1}} := by
 sorry
 
-open Filter Topology
+
 
 abbrev putnam_1987_b4_solution : Prop × ℝ × Prop × ℝ := sorry
 -- (True, -1, True, 0)

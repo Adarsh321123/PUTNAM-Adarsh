@@ -1,6 +1,8 @@
 import Mathlib
 open BigOperators
-
+open Topology Filter
+open Real
+open Function Nat
 
 abbrev putnam_2017_a1_solution : Set ℤ := sorry
 -- {x : ℤ | x > 0 ∧ (x = 1 ∨ 5 ∣ x)}
@@ -20,7 +22,6 @@ theorem putnam_2017_a2
 : ∀ n > 0, ∃ P : Polynomial ℝ, (∀ i : ℕ, P.coeff i = round (P.coeff i)) ∧ Q n = P.eval := by
 sorry
 
-open Topology Filter
 -- Note: uses (ℝ → ℝ) instead of (Set.Icc a b → Set.Ioi (0 : ℝ))
 theorem putnam_2017_a3
 (a b : ℝ)
@@ -72,14 +73,12 @@ theorem putnam_2017_b3
 : f (2/3) = 3/2 → Irrational (f 1/2) := by
 sorry
 
-open Real
 noncomputable abbrev putnam_2017_b4_solution : ℝ := sorry
 -- (log 2) ^ 2
 theorem putnam_2017_b4
 : (∑' k : ℕ, 3 * log (4 * k + 2) / (4 * k + 2) - log (4 * k + 3) / (4 * k + 3) - log (4 * k + 4) / (4 * k + 4) - log (4 * k + 5) / (4 * k + 5) = putnam_2017_b4_solution) := by
 sorry
 
-open Function Nat
 abbrev putnam_2017_b6_solution : ℕ := sorry
 -- 2016! / 1953! - 63! * 2016
 theorem putnam_2017_b6

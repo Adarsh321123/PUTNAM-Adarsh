@@ -1,14 +1,14 @@
 import Mathlib
 
 open BigOperators
+open Topology
+open Filter
+open Complex
+open SimpleGraph.Walk
 
 theorem putnam_1965_a2
 : ∀ n > 0, ∑ r in Finset.Icc 0 ((n - 1)/2), ((n - 2*r) * Nat.choose n r / (n : ℚ))^2 = (Nat.choose (2*n - 2) (n - 1))/(n : ℚ) := by
 sorry
-
-open Topology
-open Filter
-open Complex
 
 theorem putnam_1965_a3
 (a : ℕ → ℝ)
@@ -61,8 +61,6 @@ theorem putnam_1965_b4
 : let ⟨⟨p, q⟩, ⟨s, g⟩⟩ := putnam_1965_b4_solution; ∀ n > 0, f (n + 1) = p (f n) / q (f n) ∧
 s = {x : ℝ | ∃ l : ℝ, Tendsto (fun n : ℕ => f n x) ⊤ (𝓝 l)} ∧ ∀ x ∈ s, Tendsto (fun n : ℕ => f n x) ⊤ (𝓝 (g x)) := by
 sorry
-
-open SimpleGraph.Walk
 
 theorem putnam_1965_b5
 [Fintype K]

@@ -1,7 +1,11 @@
 import Mathlib
 open BigOperators
-
 open Nat
+open Set
+open Topology Filter
+open Matrix
+open MvPolynomial
+
 abbrev putnam_2002_a1_solution : ℕ → ℕ → ℝ := sorry
 -- (fun k n : ℕ => (-k) ^ n * (n)!)
 theorem putnam_2002_a1
@@ -20,15 +24,11 @@ theorem putnam_2002_a3
 : Even (Tn - n) := by
 sorry
 
-open Set
-
 theorem putnam_2002_a5
 (a : ℕ → ℚ)
 (ha : a 0 = 1 ∧ ∀ n : ℕ, a (2*n + 1) = a n ∧ a (2*n + 2) = a n + a (n + 1))
 : ∀ q : ℚ, q > 0 → q ∈ {a (n - 1) / a n | n ∈ Ici 1} := by
 sorry
-
-open Topology Filter
 
 abbrev putnam_2002_a6_solution : Set ℕ := sorry
 -- {2}
@@ -47,9 +47,6 @@ sorry
 theorem putnam_2002_b5
 : ∃ n : ℕ, {b : ℕ | (Nat.digits b n).length = 3 ∧ List.Palindrome (Nat.digits b n)}.ncard ≥ 2002 := by
 sorry
-
-open Matrix
-open MvPolynomial
 
 theorem putnam_2002_b6
 (p : ℕ)

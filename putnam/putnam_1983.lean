@@ -1,6 +1,8 @@
 import Mathlib
 open BigOperators
-
+open Nat
+open Filter Topology Real
+open Polynomial
 
 abbrev putnam_1983_a1_solution : ℕ := sorry
 -- 2301
@@ -16,8 +18,6 @@ theorem putnam_1983_a3
 : ∀ a ∈ Finset.Icc 1 p, ∀ b ∈ Finset.Icc 1 p, a ≠ b → ¬(F a ≡ F b [MOD p]) := by
 sorry
 
-open Nat
-
 theorem putnam_1983_a4
 (k : ℕ)
 (kpos : k > 0)
@@ -31,8 +31,6 @@ abbrev putnam_1983_a5_solution : Prop := sorry
 theorem putnam_1983_a5
 : ((∃ α : ℝ, α > 0 ∧ ∀ n : ℕ, n > 0 → Even (⌊α ^ n⌋ - n)) ↔ putnam_1983_a5_solution) := by
 sorry
-
-open Filter Topology Real
 
 noncomputable abbrev putnam_1983_a6_solution : ℝ := sorry
 -- 2 / 9
@@ -63,8 +61,6 @@ theorem putnam_1983_b5
 (fact : Tendsto (fun N ↦ ∏ n in Finset.Icc 1 N, (2 * n / (2 * n - 1)) * (2 * n / (2 * n + 1)) : ℕ → ℝ) ⊤ (𝓝 (Real.pi / 2)))
 : (Tendsto (fun n ↦ (1 / n) * ∫ x in (1)..n, dist (n / x) : ℕ → ℝ) ⊤ (𝓝 putnam_1983_b5_solution)) := by
 sorry
-
-open Polynomial
 
 theorem putnam_1983_b6
 (n : ℕ)

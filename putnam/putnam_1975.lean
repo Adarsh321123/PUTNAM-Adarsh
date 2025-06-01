@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-
 open Polynomial
+open Multiset
 
 abbrev putnam_1975_a1_solution : ((ℤ × ℤ) → ℤ) × ((ℤ × ℤ) → ℤ) := sorry
 -- (fun (a, b) => a + b + 1, fun (a, b) => a - b)
@@ -37,8 +37,6 @@ theorem putnam_1975_b1
 (H : Set (ℤ × ℤ) := {(x, y) : (ℤ × ℤ) | ∃ u v w : ℤ, (x, y) = (u*3 + v*4 + w*5, u*8 + v*(-1) + w*4)})
 : (∃ b : ℤ, H = {(x, y) : (ℤ × ℤ) | ∃ u v : ℤ, (x, y) = (u, u*b + v*putnam_1975_b1_solution)}) ∧ putnam_1975_b1_solution > 0 := by
 sorry
-
-open Multiset
 
 noncomputable abbrev putnam_1975_b3_solution : ℕ → ℝ := sorry
 -- fun k : ℕ => 1/(Nat.factorial k)

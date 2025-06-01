@@ -1,4 +1,7 @@
 import Mathlib
+open Set
+open BigOperators Function
+open Filter Topology
 
 theorem putnam_1964_a1
 (A : Finset (Fin 2 → ℝ))
@@ -7,8 +10,6 @@ theorem putnam_1964_a1
 : (sSup dists / sInf dists ≥ Real.sqrt 3) := by
 sorry
 
-open Set
-
 -- uses (ℝ → ℝ) instead of (Icc 0 1 → ℝ)
 abbrev putnam_1964_a2_solution : ℝ → Set (ℝ → ℝ) := sorry
 -- fun _ ↦ ∅
@@ -16,8 +17,6 @@ theorem putnam_1964_a2
 (α : ℝ)
 : (putnam_1964_a2_solution α = {f : ℝ → ℝ | (∀ x ∈ Icc 0 1, f x > 0) ∧ ContinuousOn f (Icc 0 1) ∧ ∫ x in (0)..1, f x = 1 ∧ ∫ x in (0)..1, x * f x = α ∧ ∫ x in (0)..1, x^2 * f x = α^2}) := by
 sorry
-
-open BigOperators Function
 
 theorem putnam_1964_a3
 (x a b : ℕ → ℝ)
@@ -34,8 +33,6 @@ theorem putnam_1964_a4
 (hu : ∀ n ≥ 4, u n = ((u (n - 1) + u (n - 2) + u (n - 3) * u (n - 4)) : ℝ) / (u (n - 1) * u (n - 2) + u (n - 3) + u (n - 4)) ∧ (u (n - 1) * u (n - 2) + u (n - 3) + u (n - 4)) ≠ 0)
 : (∃ N c : ℕ, c > 0 ∧ ∀ n ≥ N, u (n + c) = u n) := by
 sorry
-
-open Filter Topology
 
 theorem putnam_1964_a5
 (pa : (ℕ → ℝ) → Prop := fun a ↦ (∀ n : ℕ, a n > 0) ∧ ∃ L : ℝ, Tendsto (fun N ↦ ∑ n in Finset.range N, 1 / a n) ⊤ (𝓝 L))

@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-
 open Filter Topology
+
 theorem putnam_1994_a1
 (a : ℕ → ℝ)
 (ha : ∀ n ≥ 1, 0 < a n ∧ a n ≤ a (2 * n) + a (2 * n + 1))

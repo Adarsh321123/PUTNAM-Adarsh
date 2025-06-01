@@ -1,7 +1,8 @@
 import Mathlib
 open BigOperators
-
 open Topology Filter
+open Polynomial Set
+open Set
 
 theorem putnam_2001_a1
 (S : Type*)
@@ -9,8 +10,6 @@ theorem putnam_2001_a1
 (hS : ∀ a b : S, (a * b) * a = b)
 : ∀ a b : S, a * (b * a) = b := by
 sorry
-
-open Polynomial Set
 
 abbrev putnam_2001_a3_solution : Set ℤ := sorry
 -- {m : ℤ | ∃ k : ℤ, k^2 = m ∨ 2*k^2 = m}
@@ -53,7 +52,6 @@ theorem putnam_2001_b3
 : ∑' n : Set.Ici 1, ((2 : ℝ) ^ (round (Real.sqrt n)) + (2 : ℝ) ^ (-round (Real.sqrt n))) / 2 ^ (n : ℝ) = putnam_2001_b3_solution := by
 sorry
 
-open Set
 abbrev putnam_2001_b4_solution : Prop := sorry
 -- True
 theorem putnam_2001_b4

@@ -1,6 +1,5 @@
 import Mathlib
 open BigOperators
-
 open Topology Filter Set Polynomial Function
 
 noncomputable abbrev putnam_1981_a1_solution : ℝ := sorry

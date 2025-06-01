@@ -1,6 +1,5 @@
 import Mathlib
 open BigOperators
-
 open Function Set
 
 theorem putnam_2013_a2

@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-
 open Set Function Filter Topology Polynomial Real
+open Polynomial
 
 abbrev putnam_1982_a2_solution : Prop := sorry
 -- True
@@ -36,8 +36,6 @@ theorem putnam_1982_a6
 : (∀ b : ℕ → ℕ, ∀ x : ℕ → ℝ, hb b ∧ hx x ∧ limb (b, x) ∧ limx x →
 Tendsto (fun n : ℕ => ∑ k in Finset.Icc 1 n, x (b k)) atTop (𝓝 1)) ↔ putnam_1982_a6_solution := by
 sorry
-
-open Polynomial
 
 noncomputable abbrev putnam_1982_b2_solution : Polynomial ℝ := sorry
 -- C Real.pi * (2*X - 1)^2

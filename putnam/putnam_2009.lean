@@ -1,8 +1,8 @@
 import Mathlib
 open BigOperators
-
-
 open Topology MvPolynomial Filter
+open Set
+open MvPolynomial Metric
 
 abbrev putnam_2009_a1_solution : Prop := sorry
 -- True
@@ -39,7 +39,6 @@ fun q => (∃ (k m : ℕ) (a : Fin k → ℕ) (b : Fin m → ℕ),
 : ∀ q : ℚ, q > 0 → isquotprodprimefact q := by
 sorry
 
-open Set
 abbrev putnam_2009_b3_solution : Set ℤ := sorry
 -- {n : ℤ | ∃ k ≥ 1, n = 2 ^ k - 1}
 theorem putnam_2009_b3
@@ -47,8 +46,6 @@ theorem putnam_2009_b3
 (A : ℤ → ℤ := fun n ↦ {S : Set ℤ | mediocre n S}.ncard)
 : ({n : ℤ | n > 0 ∧ A (n + 2) - 2 * A (n + 1) + A n = 1} = putnam_2009_b3_solution) := by
 sorry
-
-open MvPolynomial Metric
 
 abbrev putnam_2009_b4_solution : ℕ := sorry
 -- 2020050

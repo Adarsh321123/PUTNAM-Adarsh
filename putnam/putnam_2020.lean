@@ -1,6 +1,7 @@
 import Mathlib
 open BigOperators
-
+open Filter Topology Set
+open Set
 
 abbrev putnam_2020_a1_solution : ℕ := sorry
 -- 508536
@@ -15,7 +16,6 @@ theorem putnam_2020_a2
 : (∑ j in Finset.Icc 0 k, 2 ^ (k - j) * Nat.choose (k + j) j = putnam_2020_a2_solution k) := by
 sorry
 
-open Filter Topology Set
 
 abbrev putnam_2020_a3_solution : Prop := sorry
 -- False
@@ -50,7 +50,6 @@ theorem putnam_2020_b1
 : S % 2020 = putnam_2020_b1_solution := by
 sorry
 
-open Set
 noncomputable abbrev putnam_2020_b4_solution : ℝ := sorry
 -- 1 / 4040
 theorem putnam_2020_b4

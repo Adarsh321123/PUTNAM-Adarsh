@@ -1,5 +1,6 @@
 import Mathlib
 open BigOperators
+open Filter Topology Metric
 
 
 -- Note: The actual problem asks to "find" such polynomials as well - but the solution does not give a set of all possible solutions
@@ -17,8 +18,6 @@ theorem putnam_1999_a2
 : ∃ k : ℕ, ∃ f : Fin k → Polynomial ℝ, k > 0 ∧
 ∀ x : ℝ, p.eval x = ∑ j : Fin k, ((f j).eval x) ^ 2 := by
 sorry
-
-open Filter Topology Metric
 
 theorem putnam_1999_a3
 (f : ℝ → ℝ := fun x => 1/(1 - 2 * x - x^2))

@@ -1,5 +1,8 @@
 import Mathlib
 open BigOperators
+open Finset
+open Polynomial
+open Topology Filter Metric
 
 theorem putnam_1968_a1
 : 22/7 - Real.pi = ∫ x in (0)..1, x^4 * (1 - x)^4 / (1 + x^2) := by
@@ -15,8 +18,6 @@ theorem putnam_1968_a2
 : ∃ r s : ℚ, 0 < q1 ∧ q1 < ε ∧ 0 < q2 ∧ q2 < ε := by
 sorry
 
-open Finset
-
 theorem putnam_1968_a3
 {a : Type}
 (S : Finset a)
@@ -31,8 +32,6 @@ theorem putnam_1968_a4
 (hS : ∀ i : Fin n, (S i 0)^2 + (S i 1)^2 + (S i 2)^2 = 1)
 : ∑ i : Fin n, ∑ j : Fin n, (if i < j then (Euclidean.dist (S i) (S j))^2 else (0 : ℝ)) ≤ n^2 := by
 sorry
-
-open Polynomial
 
 abbrev putnam_1968_a5_solution : ℝ := sorry
 -- 8
@@ -55,8 +54,6 @@ theorem putnam_1968_b2
 (hA : A.ncard > (Nat.card G : ℚ)/2)
 : ∀ g : G, ∃ x ∈ A, ∃ y ∈ A, g = x * y := by
 sorry
-
-open Topology Filter Metric
 
 theorem putnam_1968_b4
 (f : ℝ → ℝ)

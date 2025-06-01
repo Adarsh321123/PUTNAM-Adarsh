@@ -1,7 +1,9 @@
 import Mathlib
 open BigOperators
-
 open Matrix
+open Function
+open Real
+open Real Topology Filter
 
 -- Note: This proof statement strays a bit from the problem statement since it manually checks a condition for acuteness based on side lengths.
 theorem putnam_2012_a1
@@ -17,8 +19,6 @@ theorem putnam_2012_a2
 (habc : a * c = b * c)
 : a = b := by
 sorry
-
-open Function
 
 -- Note: uses (ℝ → ℝ) instead of (Set.Icc (-1 : ℝ) 1 → ℝ)
 noncomputable abbrev putnam_2012_a3_solution : ℝ → ℝ := sorry
@@ -68,7 +68,6 @@ theorem putnam_2012_a6
 : ((∀ f : (ℝ × ℝ) → ℝ, ∀ x y : ℝ, p f → f (x, y) = 0) ↔ putnam_2012_a6_solution) := by
 sorry
 
-open Real
 theorem putnam_2012_b1
 (nneg : Set ℝ := Set.Ici 0)
 (S : Set (nneg → ℝ))
@@ -93,7 +92,6 @@ theorem putnam_2012_b3
 : (∀ n ≥ 1, ∀ (matchups : Fin (2 * n - 1) → (Fin (2 * n) → Fin (2 * n))) (wins : Fin (2 * n - 1) → (Fin (2 * n) → Bool)), (nmatchupsgames n matchups ∧ nmatchupsall n matchups ∧ nmatchupswins n matchups wins) → nmatchupswinschoices n matchups wins) ↔ putnam_2012_b3_solution := by
 sorry
 
-open Real Topology Filter
 noncomputable abbrev putnam_2012_b4_solution : Prop := True
 -- True
 theorem putnam_2012_b4

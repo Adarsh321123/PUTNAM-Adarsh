@@ -1,6 +1,7 @@
 import Mathlib
 open BigOperators
-
+open Filter Topology
+open Nat Filter Topology
 
 theorem putnam_2008_a1
 (f : ℝ → ℝ → ℝ)
@@ -9,7 +10,6 @@ theorem putnam_2008_a1
 sorry
 
 
-open Filter Topology
 abbrev putnam_2008_a4_solution : Prop := sorry
 -- False
 theorem putnam_2008_a4
@@ -31,7 +31,6 @@ theorem putnam_2008_b1 :
 ∧ ∃ (c : Fin 2 → ℝ) (r : ℝ), ¬ is_rational_point c ∧ (Set.ncard {p : Fin 2 → ℝ | p ∈ real_circle c r ∧ is_rational_point p} = putnam_2008_b1_solution) := by
 sorry
 
-open Nat Filter Topology
 abbrev putnam_2008_b2_solution : ℝ := sorry
 -- -1
 theorem putnam_2008_b2

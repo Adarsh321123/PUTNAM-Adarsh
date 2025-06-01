@@ -1,6 +1,7 @@
 import Mathlib
 open Topology Filter
 open BigOperators
+open Polynomial
 
 theorem putnam_1963_a2
 (f : ℕ → ℕ)
@@ -17,7 +18,6 @@ theorem putnam_1963_a4
 : (∀ a, apos a → limsup (f a) ⊤ ≥ 1) ∧ (∃ a, apos a ∧ limsup (f a) ⊤ = 1) := by
 sorry
 
-open Polynomial
 abbrev putnam_1963_b1_solution : ℤ := sorry
 -- 2
 theorem putnam_1963_b1

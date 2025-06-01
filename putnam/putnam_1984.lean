@@ -1,5 +1,9 @@
 import Mathlib
 open BigOperators
+open Topology Filter
+open Nat
+open Nat
+open Nat
 
 abbrev putnam_1984_a2_solution : ℚ := sorry
 -- 2
@@ -7,7 +11,6 @@ theorem putnam_1984_a2
 : ∑' k : Set.Ici 1, (6 ^ (k : ℕ) / ((3 ^ ((k : ℕ) + 1) - 2 ^ ((k : ℕ) + 1)) * (3 ^ (k : ℕ) - 2 ^ (k : ℕ)))) = putnam_1984_a2_solution := by
 sorry
 
-open Topology Filter
 noncomputable abbrev putnam_1984_a3_solution : MvPolynomial (Fin 3) ℝ := sorry
 -- (MvPolynomial.X 2) ^ 2 * ((MvPolynomial.X 0) ^ 2 - (MvPolynomial.X 1) ^ 2)
 theorem putnam_1984_a3
@@ -24,7 +27,6 @@ theorem putnam_1984_a3
 : Tendsto (fun x : ℝ => (Mn x).det / (x - a) ^ (2 * n - 2)) (𝓝[≠] a) (𝓝 (MvPolynomial.eval polyabn putnam_1984_a3_solution)) := by
 sorry
 
-open Nat
 abbrev putnam_1984_a5_solution : ℕ × ℕ × ℕ × ℕ × ℕ := sorry
 -- (1, 9, 8, 4, 25)
 theorem putnam_1984_a5
@@ -35,7 +37,7 @@ theorem putnam_1984_a5
 : let (a, b, c, d, n) := putnam_1984_a5_solution; a > 0 ∧ b > 0 ∧ c > 0 ∧ d > 0 ∧ n > 0 ∧ (∫ p in R, (p 0) ^ 1 * (p 1) ^ 9 * (p 2) ^ 8 * (w p) ^ 4 = ((a)! * (b)! * (c)! * (d)! : ℝ) / (n)!) := by
 sorry
 
-open Nat
+
 -- Note: uses (ℕ → ℕ) instead of (Fin k → ℕ)
 abbrev putnam_1984_a6_solution : Prop × ℕ := sorry
 -- (True, 4)
@@ -74,7 +76,7 @@ theorem putnam_1984_b3
 : (∀ (F : Type*) (_ : Fintype F), Fintype.card F ≥ 2 → (∃ mul : F → F → F, ∀ x y z : F, (mul x z = mul y z → x = y) ∧ (mul x (mul y z) ≠ mul (mul x y) z))) ↔ putnam_1984_b3_solution := by
 sorry
 
-open Nat
+
 noncomputable abbrev putnam_1984_b5_solution : ℤ × Polynomial ℝ × Polynomial ℕ := sorry
 -- (2, (Polynomial.X * (Polynomial.X - 1)) / 2, Polynomial.X)
 theorem putnam_1984_b5

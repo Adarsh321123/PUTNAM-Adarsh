@@ -1,8 +1,7 @@
 import Mathlib
 open BigOperators
-
-
 open Set
+open MvPolynomial
 
 theorem putnam_1971_a1
 (S : Set (ℤ × ℤ × ℤ))
@@ -29,7 +28,6 @@ theorem putnam_1971_a3
 : (Euclidean.dist a b) * (Euclidean.dist a c) * (Euclidean.dist b c) ≥ 2 * R := by
 sorry
 
-open MvPolynomial
 theorem putnam_1971_a4
 (ε : ℝ)
 (hε : 0 < ε ∧ ε < 1)

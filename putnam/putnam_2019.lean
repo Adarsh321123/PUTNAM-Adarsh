@@ -1,7 +1,8 @@
 import Mathlib
 open BigOperators
 open Topology Filter
-
+open Topology Filter Set
+open Matrix
 
 abbrev putnam_2019_a1_solution : Set ℤ := sorry
 -- {n : ℤ | n ≥ 0 ∧ ¬Int.ModEq 9 n 3 ∧ ¬Int.ModEq 9 n 6}
@@ -68,7 +69,6 @@ theorem putnam_2019_b1
 : {sPn : Finset (Fin 2 → ℤ) | (sPn : Set (Fin 2 → ℤ)) ⊆ Pn ∧ sPnsquare sPn}.encard = putnam_2019_b1_solution n := by
 sorry
 
-open Topology Filter Set
 noncomputable abbrev putnam_2019_b2_solution : ℝ := sorry
 -- 8/Real.pi^3
 theorem putnam_2019_b2
@@ -77,7 +77,6 @@ Real.sin ((2*k - 1)*Real.pi/(2*n))/((Real.cos ((k - 1)*Real.pi/(2*n))^2)*(Real.c
 : Tendsto (fun n : ℕ => (a n)/n^3) atTop (𝓝 putnam_2019_b2_solution) := by
 sorry
 
-open Matrix
 theorem putnam_2019_b3
 (n : ℕ)
 (hn : n > 0)

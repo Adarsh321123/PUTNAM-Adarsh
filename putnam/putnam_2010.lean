@@ -1,6 +1,6 @@
 import Mathlib
 open BigOperators
-
+open Filter Topology Set
 
 noncomputable abbrev putnam_2010_a1_solution : ℕ → ℕ := sorry
 -- (fun n : ℕ => Nat.ceil ((n : ℝ) / 2))
@@ -30,8 +30,6 @@ theorem putnam_2010_a5
 (hGcross : ∀ a b : G, crossProduct a b = (a * b : Fin 3 → ℝ) ∨ crossProduct (a : Fin 3 → ℝ) b = 0)
 : ∀ a b : G, crossProduct (a : Fin 3 → ℝ) b = 0 := by
 sorry
-
-open Filter Topology Set
 
 -- Note: uses (ℝ → ℝ) instead of (Ici 0 → ℝ)
 theorem putnam_2010_a6

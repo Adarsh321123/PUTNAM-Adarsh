@@ -1,7 +1,7 @@
 import Mathlib
 open BigOperators
-
 open Nat Topology Filter
+open Nat
 
 abbrev putnam_2004_a1_solution : Prop := sorry
 -- True
@@ -47,7 +47,6 @@ theorem putnam_2004_b1
 : ∀ i : Fin n, isint (∑ j : Fin (i + 1), (P.coeff (n - j) * r ^ ((i.1 + 1) - j))) := by
 sorry
 
-open Nat
 theorem putnam_2004_b2
 (m n : ℕ)
 (mnpos : m > 0 ∧ n > 0)

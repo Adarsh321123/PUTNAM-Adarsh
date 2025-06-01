@@ -1,6 +1,11 @@
 import Mathlib
 open BigOperators
-
+open Real
+open Equiv
+open Polynomial
+open Filter Topology
+open MvPolynomial
+open Matrix
 
 abbrev putnam_1986_a1_solution : ℝ := sorry
 -- 18
@@ -16,7 +21,6 @@ theorem putnam_1986_a2
 : (Nat.floor ((10 ^ 20000 : ℝ) / (10 ^ 100 + 3)) % 10 = putnam_1986_a2_solution) := by
 sorry
 
-open  Real
 noncomputable abbrev putnam_1986_a3_solution : ℝ := sorry
 -- Real.pi / 2
 theorem putnam_1986_a3
@@ -25,8 +29,6 @@ theorem putnam_1986_a3
 (harccot : ∀ t : ℝ, t ≥ 0 → arccot t ∈ Set.Ioc 0 (Real.pi / 2) ∧ cot (arccot t) = t)
 : (∑' n : ℕ, arccot (n ^ 2 + n + 1) = putnam_1986_a3_solution) := by
 sorry
-
-open Equiv
 
 abbrev putnam_1986_a4_solution : ℚ × ℚ × ℚ × ℚ × ℚ × ℚ × ℚ := sorry
 -- (1, 4, 2, 3, -4, 2, 1)
@@ -79,8 +81,6 @@ theorem putnam_1986_b2
 : ({T : ℂ × ℂ × ℂ | ∃ x y z : ℂ, T = (x - y, y - z, z - x) ∧ x * (x - 1) + 2 * y * z = y * (y - 1) + 2 * z * x ∧ y * (y - 1) + 2 * z * x = z * (z - 1) + 2 * x * y} = putnam_1986_b2_solution) := by
 sorry
 
-open Polynomial
-
 theorem putnam_1986_b3
 (cong : Polynomial ℤ → Polynomial ℤ → ℤ → Prop := fun f g m ↦ ∀ i : ℕ, m ∣ (f - g).coeff i)
 (n p : ℕ)
@@ -92,8 +92,6 @@ theorem putnam_1986_b3
 : (∃ F G : Polynomial ℤ, cong F f p ∧ cong G g p ∧ cong (F * G) h (p ^ n)) := by
 sorry
 
-open Filter Topology
-
 abbrev putnam_1986_b4_solution : Prop := sorry
 -- True
 theorem putnam_1986_b4
@@ -103,8 +101,6 @@ theorem putnam_1986_b4
 : (Tendsto G ⊤ (𝓝 0) ↔ putnam_1986_b4_solution) := by
 sorry
 
-open MvPolynomial
-
 abbrev putnam_1986_b5_solution : Prop := sorry
 -- False
 theorem putnam_1986_b5
@@ -112,8 +108,6 @@ theorem putnam_1986_b5
 (perms : Set (Set (MvPolynomial (Fin 3) ℝ)) := {{X 0, X 1, X 2}, {X 0, -X 1, -X 2}, {-X 0, X 1, -X 2}, {-X 0, -X 1, X 2}})
 : ((∀ pqr : Fin 3 → MvPolynomial (Fin 3) ℝ, (∀ xyz : Fin 3 → ℝ, MvPolynomial.eval (fun i ↦ MvPolynomial.eval xyz (pqr i)) f = MvPolynomial.eval xyz f) → ({pqr 0, pqr 1, pqr 2} ∈ perms)) ↔ putnam_1986_b5_solution) := by
 sorry
-
-open Matrix
 
 theorem putnam_1986_b6
 (n : ℕ)

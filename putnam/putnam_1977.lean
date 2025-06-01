@@ -1,6 +1,9 @@
 import Mathlib
 open BigOperators
-
+open RingHom Set
+open Nat
+open Filter Topology
+open Set
 
 noncomputable abbrev putnam_1977_a1_solution : ℝ := sorry
 -- -7 / 8
@@ -24,15 +27,11 @@ theorem putnam_1977_a3
 : let h := putnam_1977_a3_solution f g; (∀ x : ℝ, f x = (h (x + 1) + h (x - 1)) / 2 ∧ g x = (h (x + 4) + h (x - 4)) / 2) := by
 sorry
 
-open RingHom Set
-
 noncomputable abbrev putnam_1977_a4_solution : RatFunc ℝ := sorry
 -- RatFunc.X / (1 - RatFunc.X)
 theorem putnam_1977_a4
 : (∀ x ∈ Ioo 0 1, putnam_1977_a4_solution.eval (id ℝ) x = ∑' n : ℕ, x ^ 2 ^ n / (1 - x ^ 2 ^ (n + 1))) := by
 sorry
-
-open Nat
 
 theorem putnam_1977_a5
 (p m n : ℕ)
@@ -48,8 +47,6 @@ theorem putnam_1977_a6
 (room : (ℝ × ℝ) → ℝ := fun (a,b) ↦ min (min a (1 - a)) (min b (1 - b)))
 : ((∀ f : (ℝ × ℝ) → ℝ, Continuous f → (∀ P ∈ X, ∫ x in (P.1 - room P)..(P.1 + room P), ∫ y in (P.2 - room P)..(P.2 + room P), f (x, y) = 0) → (∀ P ∈ X, f P = 0)) ↔ putnam_1977_a6_solution) := by
 sorry
-
-open Filter Topology
 
 noncomputable abbrev putnam_1977_b1_solution : ℝ := sorry
 -- 2 / 3
@@ -74,8 +71,6 @@ theorem putnam_1977_b5
 (hA : A + ∑ i : Fin n, (a i)^2 < (1/((n : ℝ) - 1))*(∑ i : Fin n, a i)^2)
 : ∀ i j : Fin n, i < j → A < 2*(a i)*(a j) := by
 sorry
-
-open Set
 
 theorem putnam_1977_b6
 [Group G]

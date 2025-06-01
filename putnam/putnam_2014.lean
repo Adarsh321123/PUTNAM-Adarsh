@@ -1,7 +1,9 @@
 import Mathlib
 open BigOperators
 open Topology Filter
-
+open Nat
+open Nat
+open Set Interval
 
 theorem putnam_2014_a1
 (f : ℝ → ℝ)
@@ -11,8 +13,6 @@ theorem putnam_2014_a1
 (hc : ∀ k : ℕ, c k = taylorCoeffWithin f k Set.univ 0)
 : ∀ k : ℕ, c k ≠ 0 → ∃ q : ℚ, c k = q ∧ (q.num = 1 ∨ Prime q.num.natAbs) := by
 sorry
-
-open Nat
 
 abbrev putnam_2014_a2_solution : ℕ → ℝ := sorry
 -- (fun n : ℕ => (-1) ^ (n - 1) / ((n - 1)! * (n)!))
@@ -57,8 +57,6 @@ theorem putnam_2014_a6
 : (putnam_2014_a6_solution n ≥ 1 ∧ kex (putnam_2014_a6_solution n)) ∧ (∀ k ≥ 1, kex k → k ≤ putnam_2014_a6_solution n) := by
 sorry
 
-open Nat
-
 abbrev putnam_2014_b1_solution : Set ℕ := sorry
 -- {n : ℕ | n > 0 ∧ ¬∃ a ∈ digits 10 n, a = 0}
 theorem putnam_2014_b1
@@ -94,7 +92,6 @@ theorem putnam_2014_b4
 : ∀ r ∈ P.roots, r.im = 0 := by
 sorry
 
-open Set Interval
 theorem putnam_2014_b6
 (f : ℝ → ℝ)
 (hlip : ∃ K > 0, ∀ x ∈ Icc 0 1, ∀ y ∈ Icc 0 1, |f x - f y| ≤ K * |x - y|)
